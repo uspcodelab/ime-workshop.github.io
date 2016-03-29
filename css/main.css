@@ -1,10 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,700,100italic,300italic,400italic,700italic);
 /*
 Template Name: Multi
 Version: 1.0
 Author: ShapeBootstrap
 Author URL: http://shapebootstrap.net
 */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,700,100italic,300italic,400italic,700italic);
 /*************************
 *******Typography******
 **************************/
@@ -27,7 +27,7 @@ h6 {
   color: #272727;
 }
 a {
-  color: #45aed6;
+  color: #720d88;
   -webkit-transition: color 400ms, background-color 400ms;
   -moz-transition: color 400ms, background-color 400ms;
   -o-transition: color 400ms, background-color 400ms;
@@ -36,7 +36,7 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #2a95be;
+  color: #4b0959;
 }
 hr {
   border-top: 1px solid #e5e5e5;
@@ -83,7 +83,7 @@ hr {
   margin-left: -12px;
   border: 5px solid #fff;
   border-radius: 20px;
-  background: #45aed6;
+  background: #720d88;
 }
 .btn {
   border-width: 0;
@@ -91,12 +91,12 @@ hr {
   border-radius: 3px;
 }
 .btn.btn-primary {
-  background: #45aed6;
-  border-color: #2a95be;
+  background: #720d88;
+  border-color: #4b0959;
 }
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
-  background: #2a95be;
+  background: #4b0959;
 }
 .column-title {
   margin-top: 0;
@@ -111,7 +111,7 @@ hr {
   bottom: -1px;
   left: 0;
   width: 40%;
-  border-bottom: 1px solid #45aed6;
+  border-bottom: 1px solid #720d88;
 }
 ul.nostyle {
   list-style: none;
@@ -119,7 +119,7 @@ ul.nostyle {
   margin-bottom: 20px;
 }
 ul.nostyle i {
-  color: #45aed6;
+  color: #720d88;
 }
 .scaleIn {
   -webkit-animation-name: scaleIn;
@@ -181,7 +181,7 @@ ul.nostyle i {
   #main-menu.navbar-default .navbar-nav > li:hover > a {
     background: transparent;
     padding-top: 37px;
-    border-top: 3px solid #45aed6;
+    border-top: 3px solid #720d88;
   }
   #main-menu.navbar-default .dropdown-menu {
     padding: 0 20px;
@@ -211,12 +211,12 @@ ul.nostyle i {
   #main-menu.navbar-default .dropdown-menu > li.active,
   #main-menu.navbar-default .dropdown-menu > li.open,
   #main-menu.navbar-default .dropdown-menu > li:hover {
-    border-left-color: #45aed6;
+    border-left-color: #720d88;
   }
   #main-menu.navbar-default .dropdown-menu > li.active > a,
   #main-menu.navbar-default .dropdown-menu > li.open > a,
   #main-menu.navbar-default .dropdown-menu > li:hover > a {
-    color: #45aed6;
+    color: #720d88;
     background-color: transparent;
   }
 }
@@ -245,7 +245,7 @@ ul.nostyle i {
   color: #fff;
 }
 #main-slider .slider-inner h2 > span {
-  color: #45aed6;
+  color: #720d88;
 }
 #main-slider .slider-inner .btn {
   margin-top: 10px;
@@ -270,7 +270,7 @@ ul.nostyle i {
 }
 #main-slider .owl-prev:hover,
 #main-slider .owl-next:hover {
-  background-color: #45aed6;
+  background-color: #720d88;
 }
 #main-slider .owl-prev {
   left: -35px;
@@ -284,7 +284,7 @@ ul.nostyle i {
   width: 0%;
   max-width: 100%;
   height: 4px;
-  background: #45aed6;
+  background: #720d88;
 }
 #progressBar {
   margin-top: -4px;
@@ -318,7 +318,7 @@ ul.nostyle i {
   line-height: 1;
 }
 #cta2 h2 > span {
-  color: #45aed6;
+  color: #720d88;
 }
 #features {
   padding: 100px 0;
@@ -342,7 +342,7 @@ ul.nostyle i {
   text-align: center;
   width: 64px;
   border-radius: 100%;
-  color: #45aed6;
+  color: #720d88;
   box-shadow: inset 0 0 0 1px #d7d7d7;
   -webkit-box-shadow: inset 0 0 0 1px #d7d7d7;
   transition: background-color 400ms, background-color 400ms;
@@ -358,7 +358,7 @@ ul.nostyle i {
   right: -10px;
   border: 4px solid #fff;
   border-radius: 20px;
-  background: #45aed6;
+  background: #720d88;
 }
 .media.service-box:hover .pull-left > i {
   background-image: -moz-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
@@ -391,7 +391,7 @@ ul.nostyle i {
 }
 #portfolio .portfolio-filter > li a:hover,
 #portfolio .portfolio-filter > li a.active {
-  background: #45aed6;
+  background: #720d88;
   color: #fff;
   box-shadow: 0 -3px 0 0 #318daf inset;
   -webkit-box-shadow: 0 -3px 0 0 #318daf inset;
@@ -517,7 +517,7 @@ ul.nostyle i {
   transition: none;
 }
 #testimonial {
-  background: #333333 url(../images/testimonial/bg.jpg) no-repeat 0 0;
+  background: #333 url(../images/testimonial/bg.jpg) no-repeat 0 0;
   background-size: cover;
   padding: 100px 0;
   color: #fff;
@@ -555,14 +555,14 @@ ul.nostyle i {
   width: 80px;
   height: 80px;
   line-height: 80px;
-  border: 2px solid #45aed6;
+  border: 2px solid #720d88;
   border-radius: 100px;
   position: relative;
 }
 #work-process .icon-circle > span {
   border-style: solid;
   border-width: 2px;
-  border-color: #45aed6;
+  border-color: #720d88;
   border-radius: 50%;
   background-color: #fff;
   position: absolute;
@@ -594,10 +594,10 @@ ul.nostyle i {
   margin-bottom: 10px;
 }
 #meet-team .team-member:hover {
-  border-color: #45aed6;
+  border-color: #720d88;
 }
 #meet-team .team-member:hover .social-icons > li > a {
-  background: #45aed6;
+  background: #720d88;
 }
 #meet-team .social-icons {
   list-style: none;
@@ -648,7 +648,7 @@ ul.nostyle i {
 }
 .nav.main-tab > li.active > a {
   background: #222534;
-  color: #45aed6;
+  color: #720d88;
 }
 .nav.main-tab > li:first-child > a {
   border-radius: 3px 0 0 0;
@@ -821,7 +821,7 @@ ul.nostyle i {
   display: block;
   margin-bottom: 5px;
   text-transform: uppercase;
-  color: #45aed6;
+  color: #720d88;
 }
 #blog .blog-post.blog-large .entry-title {
   margin-top: 0;
@@ -833,7 +833,7 @@ ul.nostyle i {
   color: #64686d;
 }
 #blog .blog-post.blog-large .entry-title a:hover {
-  color: #45aed6;
+  color: #720d88;
 }
 #blog .blog-post.blog-media {
   margin-bottom: 30px;
@@ -852,7 +852,7 @@ ul.nostyle i {
   display: block;
   margin-bottom: 5px;
   text-transform: uppercase;
-  color: #45aed6;
+  color: #720d88;
 }
 #blog .blog-post.blog-media .entry-title {
   margin-top: 0;
@@ -864,7 +864,7 @@ ul.nostyle i {
   color: #64686d;
 }
 #blog .blog-post.blog-media .entry-title a:hover {
-  color: #45aed6;
+  color: #720d88;
 }
 #blog .blog-post .entry-meta {
   margin-top: 20px;
@@ -880,7 +880,7 @@ ul.nostyle i {
   color: #999;
 }
 #blog .blog-post .entry-meta > span > a:hover {
-  color: #45aed6;
+  color: #720d88;
 }
 #contact {
   position: relative;
@@ -892,7 +892,7 @@ ul.nostyle i {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(69, 174, 214, 0.3);
+  background: rgba(114, 13, 136, 0.3);
   z-index: 1;
 }
 #contact .contact-form {
@@ -916,7 +916,7 @@ ul.nostyle i {
   color: #fff;
 }
 #footer a:hover {
-  color: #45aed6;
+  color: #720d88;
 }
 #footer ul {
   list-style: none;

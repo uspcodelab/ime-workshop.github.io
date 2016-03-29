@@ -4,3 +4,20 @@
     margin-bottom: 5%;
     border-radius:45%;
 }
+
+#footer{
+    padding-top: 0;
+    padding-bottom: 0;
+    background: #20222e url(../images/work-process/bg.jpg) no-repeat 0 0;
+}
+
+#footer #footer_inside{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #050505;
+    opacity: 0.3;
+}
+
+#footer .social-icons{
+    font-size: 1.4em;
+}
