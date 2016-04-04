@@ -24,6 +24,13 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+a[class^="icon2-"], a[class*=" icon2-"], span[class^="icon2-"], span[class*=" icon2-"], small[class^="icon2-"], small[class*=" icon2-"] {
+    display: -moz-inline-stack;
+    display:inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
 .icon2-worklab:before {
     content: "\e904";
 }

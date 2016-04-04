@@ -35,6 +35,20 @@
     line-height: 150%;
 }
 
+.technologies span{
+    transition: all 0.2s;
+    -moz-transition: all 0.2s; /* Firefox 4 */
+    -webkit-transition: all 0.2s; /* Safari and Chrome */
+    -o-transition: all 0.2s; /* Opera */
+    -ms-transition: all 0.2s; /* IE9 (maybe) */
+}
+
+.technologies span:hover{
+    font-size: 50px;
+    color: #720d88;
+
+}
+
 .worklab-logo{
     font-size: 90px;
     margin-top: 20px;
@@ -43,6 +57,7 @@
 .subtitle-p{
     color: #888;
     font-style: italic;
+    margin-top: 30px;
 }
 
 #services .section-header{
@@ -54,17 +69,17 @@
 }
 
 #services .icon-circle{
-    display: inline-block;
+    display: block;
     width: 100px;
     height: 100px;
     line-height: 80px;
     border: 2px solid #777;
     border-radius: 120px;
-    position: relative;
     padding-top: 8px;
-    left: 43%;
-    margin-top:20px;
-    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:40px;
+    margin-bottom: 40px;
 }
 
 #services .icon-circle > span {
@@ -72,4 +87,21 @@
     padding-left: 15px;
     padding-top: 5px;
     color: #3f51b5;
+    transition: all 0.2s;
+    -moz-transition: all 0.2s; /* Firefox 4 */
+    -webkit-transition: all 0.2s; /* Safari and Chrome */
+    -o-transition: all 0.2s; /* Opera */
+    -ms-transition: all 0.2s; /* IE9 (maybe) */
+}
+
+#services .icon-circle > span:hover{
+    color:#720d88;
+}
+
+#cta2 {
+    padding-bottom: 70px;
+}
+
+.img-decorated{
+    border: 5px solid white;
 }
