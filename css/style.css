@@ -102,6 +102,24 @@
     padding-bottom: 70px;
 }
 
-.img-decorated{
-    border: 5px solid white;
+.img-palestras-div{
+    padding: 0;
+}
+
+.img-palestras-div img{
+    margin-top: 35px;
+}
+
+a.btn.btn-primary.palestra-btn{
+    background-color:transparent;
+    border: 3px solid #720d88;
+    border-radius: 8px;
+    color: #720d88;
+}
+
+a.btn.btn-primary.palestra-btn:hover{
+    background-color:white;
+    border: 3px solid #4b0959;
+    border-radius: 8px;
+    color: #4b0959;
 }
