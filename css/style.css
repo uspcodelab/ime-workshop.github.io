@@ -1,4 +1,18 @@
-#work-process .icon-circle img{
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+#cta2 .icon-circle img {
+    height: 65px;
+    width: 65px;
+    margin-bottom: 5px;
+    /* border-radius: 70px; */
+}
+
+#work-process .icon-circle img {
     height: 70px;
     width: 70px;
     margin-bottom: 5px;
@@ -8,7 +22,7 @@
 #footer{
     padding-top: 0;
     padding-bottom: 0;
-    background: #20222e url(../images/work-process/bg.jpg) no-repeat 0 0;
+    background: #440751;
 }
 
 #footer #footer_inside{
@@ -85,7 +99,6 @@
 #services .icon-circle > span {
     font-size: 75px;
     padding-left: 15px;
-    padding-top: 5px;
     color: #3f51b5;
     transition: all 0.2s;
     -moz-transition: all 0.2s; /* Firefox 4 */
@@ -99,27 +112,44 @@
 }
 
 #cta2 {
-    padding-bottom: 70px;
+    padding-bottom: 50px;
+    background: #440751;
 }
 
-.img-palestras-div{
-    padding: 0;
+#work-process{
+    background: #440751;
 }
 
-.img-palestras-div img{
-    margin-top: 35px;
-}
-
-a.btn.btn-primary.palestra-btn{
+#cta2 a.btn.btn-primary.palestra-btn{
     background-color:transparent;
-    border: 3px solid #720d88;
+    border: 3px solid #ffffff;
     border-radius: 8px;
-    color: #720d88;
+    color: #ffffff;
+    margin-top: 50px;
 }
 
-a.btn.btn-primary.palestra-btn:hover{
+#cta2 a.btn.btn-primary.palestra-btn:hover{
     background-color:white;
     border: 3px solid #4b0959;
     border-radius: 8px;
     color: #4b0959;
+}
+
+.center-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.center-inner {
+  align-self: center;
+}
+
+#features .media.service-box:first-child{
+    margin-top: 25px;
+}
+
+@media(max-width: 768px) {
+    .row-eq-height {
+        flex-direction: column;
+    }
 }
