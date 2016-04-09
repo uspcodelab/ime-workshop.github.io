@@ -148,6 +148,52 @@
     margin-top: 25px;
 }
 
+#estrutura {
+    background-color: #f5f5f5;
+    padding: 100px 0;
+}
+
+#estrutura .panel-events{
+    border: 1px solid #720d88;
+    border-radius: 15px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px 30px;
+    text-align: center;
+}
+
+#estrutura .panel-img{
+    width: 40%;
+}
+
+#estrutura .panel-events hr{
+    border-top: 1px solid #D5D5D5;
+    border-bottom: 0;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#estrutura .panel-events hr.main-hr{
+    margin-top: 15px;
+    border-top: 1px solid #888;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+#estrutura .panel-events p{
+    font-size: 1.3em;
+    color: #666;
+}
+
+#estrutura .panel-events p.panel-text{
+    font-size: 1em;
+    color: #808080;
+}
+
+#hackathon{
+    padding: 100px 0;
+}
+
 @media(max-width: 768px) {
     .row-eq-height {
         flex-direction: column;
