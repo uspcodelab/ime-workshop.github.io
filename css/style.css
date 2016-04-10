@@ -148,12 +148,12 @@
     margin-top: 25px;
 }
 
-#estrutura {
+#operation {
     background-color: #f5f5f5;
     padding: 100px 0;
 }
 
-#estrutura .panel-events{
+#operation .panel-events{
     border: 1px solid #DDD;
     border-radius: 6px;
     margin: 0 auto;
@@ -162,30 +162,30 @@
     text-align: center;
 }
 
-#estrutura .panel-img{
+#operation .panel-img{
     width: 40%;
 }
 
-#estrutura .panel-events hr{
+#operation .panel-events hr{
     border-top: 1px solid #D5D5D5;
     border-bottom: 0;
     margin-left: 20%;
     margin-right: 20%;
 }
 
-#estrutura .panel-events hr.main-hr{
+#operation .panel-events hr.main-hr{
     margin-top: 15px;
     border-top: 1px solid #888;
     margin-left: 8%;
     margin-right: 8%;
 }
 
-#estrutura .panel-events p{
+#operation .panel-events p{
     font-size: 1.3em;
     color: #666;
 }
 
-#estrutura .panel-events p.panel-text{
+#operation .panel-events p.panel-text{
     font-size: 1em;
     color: #808080;
 }
