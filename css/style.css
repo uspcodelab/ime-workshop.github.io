@@ -160,6 +160,7 @@
     background-color: #fff;
     padding: 30px 30px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 #operation .panel-img{
@@ -197,5 +198,9 @@
 @media(max-width: 768px) {
     .row-eq-height {
         flex-direction: column;
+    }
+
+    h1, h2 {
+        font-size:33px !important;
     }
 }
