@@ -232,6 +232,8 @@
 
 .hackathon-div > div {
     align-self: center;
+    width: 100%;
+    margin-left: 0;
 } 
 
 .hackathon-div > div p{
@@ -246,5 +248,9 @@
 
     h1, h2 {
         font-size:33px !important;
+    }
+
+    #hackathon .icon-circle {
+        margin-bottom: 20px;
     }
 }
