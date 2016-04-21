@@ -36,12 +36,32 @@
     font-size: 1.4em; 
 }
 
+.bold{
+    font-weight: bold;
+}
+
 .purple{
-    color: #720d88;
+    color: #720d88 !important;
+}
+
+.purple-back{
+    background: #720d88 !important;
 }
 
 .blue{
-    color: #3f51b5;
+    color: #3f51b5 !important;
+}
+
+.blue-back{
+    background: #3f51b5 !important;
+}
+
+.orange{
+    color: #d77709 !important;
+}
+
+.orange-back{
+    background: #d77709 !important;
 }
 
 .technologies{
@@ -239,6 +259,49 @@
 .hackathon-div > div p{
     margin-bottom: 0;
     margin-left: 20px;
+}
+
+#portfolio .portfolio-filter > li a.active:after {
+    border-color: #720d88  transparent transparent transparent;
+}
+
+#portfolio .portfolio-filter > li a:hover, #portfolio .portfolio-filter > li a.active {
+    box-shadow: 0 -3px 0 0 #720d88 inset;
+    -webkit-box-shadow: 0 -3px 0 0 #720d88 inset;
+    color: #fff !important;
+}
+
+#portfolio .portfolio-item {
+  width: 19.9%;
+}
+
+#portfolio .portfolio-item .portfolio-item-inner {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+#portfolio .portfolio-item .portfolio-item-inner .img-responsive{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#portfolio .portfolio-item .portfolio-item-inner .portfolio-info {
+  opacity: 1;
+  position: relative;
+  padding: 10px;
+  background: #fff;
+  color: #666;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 1px solid #ddd;
+}
+
+#portfolio .portfolio-item .portfolio-item-inner .portfolio-info h3 {
+  color: #444;
+}
+
+#portfolio .portfolio-item .portfolio-item-inner .portfolio-info .preview {
+  background: #444;
 }
 
 @media(max-width: 768px) {
