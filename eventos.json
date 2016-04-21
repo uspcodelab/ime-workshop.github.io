@@ -1,0 +1,23 @@
+[
+    {
+        "nome": "evento nubank",
+        "palestrante": "claynon",
+        "classe": "nubank",
+        "data": "26/06/2016",
+        "thumbnail":"01.jpg"
+    }, 
+    {
+        "nome": "evento gamedev",
+        "palestrante": "wil",
+        "classe": "gamedev",
+        "data":"13/04/2016",
+        "thumbnail": "01.jpg"
+    },
+    {
+        "nome": "evento hardware",
+        "palestrante": "capella",
+        "classe": "hardware",
+        "data":"10/04/2016",
+        "thumbnail": "01.jpg"
+    }
+]
