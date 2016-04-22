@@ -23,6 +23,10 @@ app.controller("listaCtrl", function($scope, fetchEventos){
     $scope.getBackColor = function(classe) {
         return $scope.getColor(classe)+"-back";
     }
+
+    $scope.makeModal = function(evento) {
+        $scope.curvento = evento;
+    }
 });
 
 //SERVICES
