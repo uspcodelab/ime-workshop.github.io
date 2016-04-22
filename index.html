@@ -67,6 +67,8 @@
             </li>
             <li class="scroll"><a href="#hackathon">Hackathons</a>
             </li>
+            <li class="scroll"><a href="#portfolio">Lista de Eventos</a>
+            </li>
             <li class="scroll"><a href="#services">WorkLab</a>
             </li>
             <li class="scroll"><a href="#work-process">Parceiros</a>
@@ -336,20 +338,36 @@
         </div>
 
         <div class="portfolio-items">
-          <div class="portfolio-item" ng-repeat="evento in eventos" ng-class="evento.classe">
-            <div class="portfolio-item-inner">
-              <img class="img-responsive" ng-src="images/eventos/thumbs/{{evento.thumbnail}}" alt="">
-              <div class="portfolio-info">
-                <h3 ng-class="getColor(evento.classe)">{{evento.nome}}</h3>
-                {{evento.palestrante}}
-                <a class="preview" ng-class="getBackColor(evento.classe)" href="images/portfolio/full.jpg" rel="prettyPhoto">
-                  <i class="fa fa-eye"></i>
-                </a>
-              </div>
-            </div>
-          </div><!--/.portfolio-item-->
+            <a href="#modalEvento" ng-repeat="evento in eventos" data-toggle="modal" ng-click="makeModal(evento)">
+              <div class="portfolio-item" ng-class="evento.classe">
+                <div class="portfolio-item-inner">
+                  <img class="img-responsive" ng-src="images/eventos/thumbs/{{evento.thumbnail}}" alt="">
+                  <div class="portfolio-info">
+                    <h3 ng-class="getColor(evento.classe)">{{evento.nome}}</h3>
+                    {{evento.palestrante}}
+                    <div class="preview" ng-class="getBackColor(evento.classe)">
+                      <i class="fa fa-eye"></i>
+                    </div>
+                  </div>
+                </div>
+              </div><!--/.portfolio-item-->
+            </a>
         </div>
       </div><!--/.container-->
+      <div id="modalEvento" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to save changes you made to document before closing? {{blah}}</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                </div>
+            </div>
+        </div>
+      </div>
     </section><!--/#EVENTOS-->
 
   <section id="services">
