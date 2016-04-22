@@ -1,3 +1,7 @@
+body{
+    padding-top: 0;
+}
+
 .row-eq-height {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5,11 +9,8 @@
   display:         flex;
 }
 
-#cta2 .icon-circle img {
-    height: 65px;
-    width: 65px;
-    margin-bottom: 5px;
-    /* border-radius: 70px; */
+.header-back{
+    height: 100px;
 }
 
 .icon-circle img {
@@ -62,6 +63,92 @@
 
 .orange-back{
     background: #d77709 !important;
+}
+
+.teal{
+    color: #009688 !important;
+}
+
+.teal-back{
+    background-color: #009688 !important;
+}
+
+#upcoming {
+    padding: 0 0 100px;
+    background-color: #F5F5F5;
+}
+
+#upcoming .flex-calendar {
+    border:1px solid #ddd;
+    border-radius: 6px;
+}
+
+#upcoming .flex-calendar .month {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: #8E24AA;
+}
+
+#upcoming .flex-calendar .week {
+    background-color: #6A1B9A;
+}
+
+#upcoming .flex-calendar .days:last-child {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px; 
+}
+
+#upcoming .flex-calendar .days:last-child .day:first-child {
+    border-bottom-left-radius: 5px;
+}
+
+#upcoming .flex-calendar .days:last-child .day:last-child {
+    border-bottom-right-radius: 5px;
+}
+
+#upcoming .flex-calendar .days .day.selected .number {
+    background-color: transparent;
+    border: 1px solid #720d88;
+    color: #666;
+    line-height: 38px;
+}
+
+#upcoming .flex-calendar .days .day.event:before {
+    background-color: #666;
+}
+
+#upcoming .flex-calendar .days .day.event.selected .number {
+    color: #FFF;
+    border: 0;
+    line-height: 40px;
+    background-color: #666;
+}
+
+#upcoming .flex-calendar .days .day.purple-event.event:before, 
+#upcoming .flex-calendar .days .day.purple-event.event.selected .number {
+    background-color: #720d88;
+}
+
+#upcoming .flex-calendar .days .day.blue-event.event:before, 
+#upcoming .flex-calendar .days .day.blue-event.event.selected .number {
+    background-color: #3f51b5;
+}
+
+#upcoming .flex-calendar .days .day.orange-event.event:before, 
+#upcoming .flex-calendar .days .day.orange-event.event.selected .number {
+    background-color: #d77709;
+}
+
+#upcoming .flex-calendar .days .day.teal-event.event:before, 
+#upcoming .flex-calendar .days .day.teal-event.event.selected .number {
+    background-color: #009688;
+}
+
+#cta2 .icon-circle img {
+    height: 65px;
+    width: 65px;
+    margin-bottom: 5px;
+    /* border-radius: 70px; */
 }
 
 .technologies{
