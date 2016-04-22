@@ -4,6 +4,9 @@
         "palestrante": "claynon",
         "classe": "nubank",
         "data": "26/06/2016",
+        "hora": "13h as 14h",
+        "local": "CCSL",
+        "descricao": "Um evento sobre esta maravilhosa empresa",
         "thumbnail":"01.jpg"
     }, 
     {
@@ -11,6 +14,9 @@
         "palestrante": "wil",
         "classe": "gamedev",
         "data":"13/04/2016",
+        "hora": "15h as 18h",
+        "local": "Sala B05",
+        "descricao": "Evento para aprender a fazer joguinho",
         "thumbnail": "01.jpg"
     },
     {
@@ -18,6 +24,9 @@
         "palestrante": "capella",
         "classe": "hardware",
         "data":"10/04/2016",
+        "hora": "14h as 15h",
+        "local": "Sala BCC",
+        "descricao": "Evento para montar robos de arduino",
         "thumbnail": "01.jpg"
     }
 ]
