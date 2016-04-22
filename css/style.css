@@ -144,6 +144,60 @@ body{
     background-color: #009688;
 }
 
+#upcoming .event-list{
+    border: 1px solid #DDD;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 0;
+}
+
+#upcoming .event-list .event-entry {
+    position: relative;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px 15px 70px;
+    border-bottom: 1px solid #ddd;
+}
+
+#upcoming .event-list .event-entry:hover {
+    cursor: pointer;
+    background-color: #F0F0F0;
+}
+
+#upcoming .event-list .event-entry h3 {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #444;
+}
+
+#upcoming .event-list .event-entry p {
+    margin: 0;
+    color: #999;
+    line-height: 1;
+}
+
+#upcoming .event-list .event-entry p.icon{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 70px;
+    font-size: 32px;
+    justify-content: center;
+}
+
 #cta2 .icon-circle img {
     height: 65px;
     width: 65px;
@@ -399,6 +453,10 @@ body{
 
     h1, h2 {
         font-size:33px !important;
+    }
+
+    #upcoming .flex-calendar {
+        margin-bottom: 20px;
     }
 
     #hackathon .icon-circle {

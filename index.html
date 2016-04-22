@@ -93,9 +93,16 @@
       </p>
     </div>
 
-    <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
+    <div class="row row-eq-height">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2 wow fadeInLeft">
         <flex-calendar options="options" events="events"></flex-calendar>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 event-list wow fadeInRight">
+        <div class="event-entry" ng-repeat="evento in listevents">
+            <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>
+            <h3>{{evento.nome}}</h3>
+            <p>{{evento.palestrante}}</p>
+        </div>
     </div>
     </div>
 

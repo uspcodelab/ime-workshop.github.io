@@ -3,6 +3,12 @@ var app = angular.module("workSite", ["flexcalendar"]);
 //CONTROLLERS
 
 app.controller("proxCtrl", function($scope, fetchEventos, colorService){
+
+    $scope.getIcon = colorService.getIcon;
+    $scope.getColor = colorService.getColor;
+    $scope.listevents = [];
+
+    //opções do flex-calendar
     $scope.options = {
         minDate: "2016-01-01",
         maxDate: "2019-12-31",
@@ -13,6 +19,8 @@ app.controller("proxCtrl", function($scope, fetchEventos, colorService){
           console.log(date);
         }
     };
+
+    //Carregar eventos
     fetchEventos.fetchTudo().then(function(data){
         var events = [];
         // o flex-calendar exige preparação: um atributo chamado date, padrão YYYY-MM-DD
@@ -24,6 +32,11 @@ app.controller("proxCtrl", function($scope, fetchEventos, colorService){
             events.push(evento);
         }
         $scope.events = events;
+    });
+
+    fetchEventos.fetchFuturos().then(function(data){
+        $scope.nextevents = data;
+        $scope.listevents = data;
     });
 });
 
