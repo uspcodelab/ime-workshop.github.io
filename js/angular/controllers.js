@@ -1,24 +1,59 @@
 var app = angular.module("workSite", ["flexcalendar"]);
 
+//CONFIG
+
+app.config(function ($translateProvider) {
+  $translateProvider.translations('pt', {
+      JANUARY: 'Janeiro',
+      FEBRUARY: 'Fevereiro',
+      MARCH: 'Março',
+      APRIL: 'Abril',
+      MAI: 'Maio',
+      JUNE: 'Junho',
+      JULY: 'Julho',
+      AUGUST: 'Agosto',
+      SEPTEMBER: 'Setembro',
+      OCTOBER: 'Outubro',
+      NOVEMBER: 'Novembro',
+      DECEMBER: 'Dezembro',
+
+      SUNDAY: 'Domingo',
+      MONDAY: 'Segunda',
+      TUESDAY: 'Terça',
+      WEDNESDAY: 'Quarta',
+      THURSDAY: 'Quinta',
+      FRIDAY: 'Sexta',
+      SATURDAY: 'Sábado'
+  });
+  $translateProvider.preferredLanguage('pt');
+});
+
 //CONTROLLERS
 
 app.controller("proxCtrl", function($scope, fetchEventos, colorService){
 
+    moment.locale("pt-br");
     $scope.getIcon = colorService.getIcon;
     $scope.getColor = colorService.getColor;
     $scope.listevents = [];
+    $scope.showingNext = true;
+    $scope.curdate = null;
 
     //opções do flex-calendar
     $scope.options = {
         minDate: "2016-01-01",
         maxDate: "2019-12-31",
-        eventClick: function(date) { // called before dateClick and only if clicked day has events
-          console.log(date);
-        },
         dateClick: function(date) { // called every time a day is clicked
-          console.log(date);
+          $scope.showingNext = false;
+          $scope.listevents = date.event;
+          $scope.curdate = moment(date.date).format("LL");
         }
     };
+
+    $scope.showNext = function() {
+        $scope.showingNext = true;
+        $scope.listevents = $scope.nextevents;
+    }
 
     //Carregar eventos
     fetchEventos.fetchTudo().then(function(data){
@@ -115,5 +150,18 @@ app.service("colorService", function(){
 
     this.getEventColor = function(classe) {
         return this.getColor(classe)+"-event";
+    }
+
+    this.getIcon = function(classe) {
+        switch(classe) {
+            case "nubank":
+                return "fa-credit-card";
+            case "hardware":
+                return "fa-gears";
+            case "gamedev":
+                return "fa-gamepad";
+            default:
+                return "fa-lightbulb-o"; //classe falsa, não existe
+        }   
     }
 });

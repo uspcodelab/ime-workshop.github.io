@@ -81,33 +81,63 @@
   </header>
   <!--/header-->
 
-<div class="header-back purple-back">
-</div>
+  <section id="upcoming" ng-controller="proxCtrl">
+    <div class="container">
+        <div class="section-header">
+          <h2 class="section-title text-center wow fadeInDown">Próximos Eventos</h2>
+          <p class="text-center wow fadeInDown">
+            Veja o que o IME Workshop está preparando.
+          </p>
+        </div>
 
-<section id="upcoming" ng-controller="proxCtrl">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title text-center wow fadeInDown">Próximos Eventos</h2>
-      <p class="text-center wow fadeInDown">
-        Veja o que o IME Workshop está preparando.
-      </p>
-    </div>
-
-    <div class="row row-eq-height">
-    <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2 wow fadeInLeft">
-        <flex-calendar options="options" events="events"></flex-calendar>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 event-list wow fadeInRight">
-        <div class="event-entry" ng-repeat="evento in listevents">
-            <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>
-            <h3>{{evento.nome}}</h3>
-            <p>{{evento.palestrante}}</p>
+        <div class="row row-eq-height">
+            <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1 wow fadeInLeft">
+                <flex-calendar options="options" events="events"></flex-calendar>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-5 event-list wow fadeInRight">
+                <div class="event-entry info-entry">
+                    <div class="info-title" ng-show="showingNext">Vindo aí</div>
+                    <div class="info-title" ng-hide="showingNext">{{curdate}}</div>
+                    <div class="info-button" ng-hide="showingNext" ng-click="showNext()"><span class="fa fa-chevron-left"></span> Vindo aí</div>
+                </div>
+                <div class="event-entry" ng-repeat="evento in listevents">
+                    <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>
+                    <h3>{{evento.nome}}</h3>
+                    <p>{{evento.data}}</p>
+                </div>
+                <p class="no-events" ng-show="listevents.length == 0">Nenhum evento</p>
+            </div>
         </div>
     </div>
-    </div>
+  </section><!--HOME-->
 
-  </div>
-</section><!--HOME-->
+  <section id="cta2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-xs-12">
+          <div class="text-center">
+            <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
+              INTERESSADO EM DAR UMA PALESTRA?
+            </h2>
+            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
+              Então venha conversar com a gente! Você entra com o <strong>o que</strong>
+              e nós resolvemos o <strong>onde</strong>, <strong>quando</strong> e
+              <strong>com quem</strong> do evento.
+            </p>
+            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
+              Mande um e-mail para: <strong>workshop@ime.usp.br</strong>
+            </p>
+            <!--
+            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
+              <a class="btn btn-primary btn-lg palestra-btn" href="#">Inscreva-se!</a>
+            </p>
+            -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/#cta2-->
 
   <section id="about">
     <div class="container">
@@ -194,34 +224,6 @@
     </div>
   </section>
   <!--about-->
-
-  <section id="cta2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-xs-12">
-          <div class="text-center">
-            <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
-              INTERESSADO EM DAR UMA PALESTRA?
-            </h2>
-            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
-              Então venha conversar com a gente! Você entra com o <strong>o que</strong>
-              e nós resolvemos o <strong>onde</strong>, <strong>quando</strong> e
-              <strong>com quem</strong> do evento.
-            </p>
-            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
-              Mande um e-mail para: <strong>workshop@ime.usp.br</strong>
-            </p>
-            <!--
-            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
-              <a class="btn btn-primary btn-lg palestra-btn" href="#">Inscreva-se!</a>
-            </p>
-            -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--/#cta2-->
 
   <section id="operation">
     <div class="container">
@@ -553,6 +555,7 @@
   <script src="js/wow.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/moment.min.js"></script>
+  <script src="js/moment-pt-br.js"></script>
   <script src="js/angular.min.js"></script>
   <script src="js/angular-translate.min.js"></script>
   <script src="js/flex-calendar.js"></script>
