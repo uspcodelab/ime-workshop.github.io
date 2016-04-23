@@ -81,11 +81,12 @@
 #upcoming .flex-calendar .month {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    background-color: #8E24AA;
+    background-color: #561F62;
 }
 
 #upcoming .flex-calendar .week {
-    background-color: #6A1B9A;
+    background-color: #7C5185;
+    font-weight: 400;
 }
 
 #upcoming .flex-calendar .days:last-child {
@@ -94,7 +95,7 @@
 }
 
 #upcoming .flex-calendar .days .day {
-    color: #666;
+    color: #000;
 }
 
 #upcoming .flex-calendar .days:last-child .day:first-child {
@@ -205,39 +206,29 @@
 
 #upcoming .event-list .event-entry.info-entry {
     padding: 5px;
-    background-color: #E5E5E5;
+    background-color: #561F62;
     text-align: center;
     font-size: 17px;
-    color: #720d88;
+    color: #FFFFFF;
     font-weight: bold;
     display: block;
     position: relative;
 }
 
-#upcoming .event-list .event-entry.info-entry:hover {
-    cursor: default;
-    background-color: #E5E5E5;
-}
-
-#upcoming .event-list .info-entry .info-title{
+#upcoming .event-list .info-entry .info-title {
     width: 50%;
     margin: 0 auto;
 }
 
-#upcoming .event-list .info-entry .info-button{
+#upcoming .event-list .info-entry .info-button {
     position: absolute;
     top: 6px;
     left: 10px;
     width: 25%;
     text-align: left;
     font-weight: normal;
-    color: #444;
+    color: #FFF;
     font-size: 15px;
-}
-
-#upcoming .event-list .info-entry .info-button:hover{
-    cursor: pointer;
-    color: #777;
 }
 
 #upcoming .no-events {
