@@ -93,7 +93,7 @@ app.controller("listaCtrl", function($scope, fetchEventos, colorService){
 app.service("fetchEventos", function($http, $q){
     this.fetchLista = function() {
         var deferred = $q.defer();
-        $http.get("eventos.json").then(function(data){
+        $http.get("events.json").then(function(data){
             var lista = [];
             for(var x in data.data) {
                 var evento = data.data[x];
@@ -108,7 +108,7 @@ app.service("fetchEventos", function($http, $q){
 
     this.fetchFuturos = function() {
         var deferred = $q.defer();
-        $http.get("eventos.json").then(function(data){
+        $http.get("events.json").then(function(data){
             var lista = [];
             for(var x in data.data) {
                 var evento = data.data[x];
@@ -123,7 +123,7 @@ app.service("fetchEventos", function($http, $q){
 
     this.fetchTudo = function() {
         var deferred = $q.defer();
-        $http.get("eventos.json").then(function(data){
+        $http.get("events.json").then(function(data){
             deferred.resolve(data.data);
         });
         return deferred.promise;
@@ -162,6 +162,6 @@ app.service("colorService", function(){
                 return "fa-gamepad";
             default:
                 return "fa-lightbulb-o"; //classe falsa, não existe
-        }   
+        }
     }
 });
