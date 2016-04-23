@@ -30,7 +30,7 @@ app.config(function ($translateProvider) {
 
 //CONTROLLERS
 
-app.controller("proxCtrl", function($scope, fetchEventos, colorService){
+app.controller("proxCtrl", function($scope, fetchEventos, colorService) {
 
     moment.locale("pt-br");
     $scope.getIcon = colorService.getIcon;
@@ -56,11 +56,11 @@ app.controller("proxCtrl", function($scope, fetchEventos, colorService){
     }
 
     //Carregar eventos
-    fetchEventos.fetchTudo().then(function(data){
+    fetchEventos.fetchTudo().then(function(data) {
         var events = [];
         // o flex-calendar exige preparação: um atributo chamado date, padrão YYYY-MM-DD
         // e ainda por cima tem um bug que as datas aparecem um dia antes do correto
-        for(var x in data) {
+        for (var x in data) {
             var evento = data[x];
             evento.date = moment(evento.data, "DD/MM/YYYY").add(1, "days").format("YYYY-MM-DD");
             evento.eventClass = colorService.getEventColor(evento.classe);
@@ -69,14 +69,14 @@ app.controller("proxCtrl", function($scope, fetchEventos, colorService){
         $scope.events = events;
     });
 
-    fetchEventos.fetchFuturos().then(function(data){
+    fetchEventos.fetchFuturos().then(function(data) {
         $scope.nextevents = data;
         $scope.listevents = data;
     });
 });
 
-app.controller("listaCtrl", function($scope, fetchEventos, colorService){
-    fetchEventos.fetchLista().then(function(data){
+app.controller("listaCtrl", function($scope, fetchEventos, colorService) {
+    fetchEventos.fetchLista().then(function(data) {
         $scope.events = data;
     });
 
@@ -90,12 +90,12 @@ app.controller("listaCtrl", function($scope, fetchEventos, colorService){
 
 //SERVICES
 
-app.service("fetchEventos", function($http, $q){
+app.service("fetchEventos", function($http, $q) {
     this.fetchLista = function() {
         var deferred = $q.defer();
-        $http.get("events.json").then(function(data){
+        $http.get("events.json").then(function(data) {
             var lista = [];
-            for(var x in data.data) {
+            for (var x in data.data) {
                 var evento = data.data[x];
                 if(moment(evento.data, "DD/MM/YYYY").isBefore(moment(), "day")) {
                     lista.push(evento);
@@ -108,9 +108,9 @@ app.service("fetchEventos", function($http, $q){
 
     this.fetchFuturos = function() {
         var deferred = $q.defer();
-        $http.get("events.json").then(function(data){
+        $http.get("events.json").then(function(data) {
             var lista = [];
-            for(var x in data.data) {
+            for (var x in data.data) {
                 var evento = data.data[x];
                 if(moment(evento.data, "DD/MM/YYYY").isSameOrAfter(moment(), "day")) {
                     lista.push(evento);
@@ -123,14 +123,14 @@ app.service("fetchEventos", function($http, $q){
 
     this.fetchTudo = function() {
         var deferred = $q.defer();
-        $http.get("events.json").then(function(data){
+        $http.get("events.json").then(function(data) {
             deferred.resolve(data.data);
         });
         return deferred.promise;
     }
 });
 
-app.service("colorService", function(){
+app.service("colorService", function() {
     this.getColor = function(classe) {
         switch(classe) {
             case "nubank":
