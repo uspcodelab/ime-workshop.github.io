@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="pt_BR">
 
 <head>
   <meta charset="utf-8">
@@ -83,31 +83,33 @@
 
   <section id="upcoming" ng-controller="proxCtrl">
     <div class="container">
-        <div class="section-header">
-          <h2 class="section-title text-center wow fadeInDown">Próximos Eventos</h2>
-          <p class="text-center wow fadeInDown">
-            Veja o que o IME Workshop está preparando.
-          </p>
-        </div>
+      <div class="section-header">
+        <h2 class="section-title text-center wow fadeInDown">Próximos Eventos</h2>
+        <p class="text-center wow fadeInDown">
+          Veja o que o IME Workshop está preparando.
+        </p>
+      </div>
 
-        <div class="row row-eq-height">
-            <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1 wow fadeInLeft">
-                <flex-calendar options="options" events="events"></flex-calendar>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-5 event-list wow fadeInRight">
-                <div class="event-entry info-entry">
-                    <div class="info-title" ng-show="showingNext">Vindo aí</div>
-                    <div class="info-title" ng-hide="showingNext">{{curdate}}</div>
-                    <div class="info-button" ng-hide="showingNext" ng-click="showNext()"><span class="fa fa-chevron-left"></span> Vindo aí</div>
-                </div>
-                <div class="event-entry" ng-repeat="evento in listevents">
-                    <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>
-                    <h3>{{evento.nome}}</h3>
-                    <p>{{evento.data}}</p>
-                </div>
-                <p class="no-events" ng-show="listevents.length == 0">Nenhum evento</p>
-            </div>
+      <div class="row row-eq-height">
+        <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1 wow fadeInLeft">
+          <flex-calendar options="options" events="events"></flex-calendar>
         </div>
+        <div class="col-xs-12 col-sm-6 col-md-5 event-list wow fadeInRight">
+          <div class="event-entry info-entry">
+            <div class="info-title" ng-show="showingNext">Vindo aí</div>
+            <div class="info-title" ng-hide="showingNext">{{curdate}}</div>
+            <div class="info-button" ng-hide="showingNext" ng-click="showNext()">
+              <span class="fa fa-chevron-left"></span>Vindo aí
+            </div>
+          </div>
+          <div class="event-entry" ng-repeat="evento in listevents">
+            <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>
+            <h3>{{evento.nome}}</h3>
+            <p>{{evento.data}}</p>
+          </div>
+          <p class="no-events" ng-show="listevents.length == 0">Nenhum evento</p>
+        </div>
+      </div>
     </div>
   </section><!--HOME-->
 
@@ -321,22 +323,22 @@
           </div>
         </div>
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8
-                    col-md-offset-2 hackathon-div wow fadeInDown">
-            <div class="row row-eq-height">
-                <div class="col-xs-12 col-sm-2 col-md-1">
-                  <div class="icon-circle gray">
-                        <img src="images/logo-square.png">
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-10 col-md-11 center-wrap">
-                  <div class="center-inner">
-                        <p>PRÓXIMO HACKATHON: <span class="purple">SEGUNDO SEMESTRE DE 2016</span></p>
-                        <p class="info-text">
-                            Fique ligado na nossa página para mais informações!
-                        </p>
-                  </div>
-                </div>
-            </div>   
+                  col-md-offset-2 hackathon-div wow fadeInDown">
+          <div class="row row-eq-height">
+            <div class="col-xs-12 col-sm-2 col-md-1">
+              <div class="icon-circle gray"><img src="images/logo-square.png"></div>
+            </div>
+            <div class="col-xs-12 col-sm-10 col-md-11 center-wrap">
+              <div class="center-inner">
+                <p>
+                  PRÓXIMO HACKATHON: <span class="purple">SEGUNDO SEMESTRE DE 2016</span>
+                </p>
+                <p class="info-text">
+                  Fique ligado na nossa página para mais informações!
+                </p>
+              </div>
+            </div>
+          </div>   
         </div>
       </div>
     </div>
@@ -346,58 +348,61 @@
   <!--hackathon-->
 
   <section id="portfolio" ng-controller="listaCtrl">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title text-center wow fadeInDown">Lista de Eventos</h2>
-          <p class="text-center wow fadeInDown">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
-            incididunt ut <br>
-            et dolore magna aliqua. Ut enim ad minim veniam
-          </p>
-        </div>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title text-center wow fadeInDown">Eventos</h2>
+        <p class="text-center wow fadeInDown">
+          Lista de eventos do IME Workshop: veja o que já foi e o que ainda
+          está por vir - tudo separadinho pelas nossas parcerias.
+        </p>
+      </div>
 
-        <div class="text-center">
-          <ul class="portfolio-filter">
-            <li><a class="active bold" href="#" data-filter="*">Todos os Eventos</a></li>
-            <li><a href="#" data-filter=".nubank" class="purple">Nubank</a></li>
-            <li><a href="#" data-filter=".hardware" class="teal">Hardware</a></li>
-            <li><a href="#" data-filter=".gamedev" class="orange">USPGameDev</a></li>
-            <li><a href="#" data-filter=".other">Outros</a></li>
-          </ul><!--/#portfolio-filter-->
-        </div>
+      <div class="text-center">
+        <ul class="portfolio-filter">
+        <li><a class="active bold" href="#" data-filter="*">Todos os Eventos</a></li>
+        <li><a href="#" data-filter=".nubank" class="purple">Nubank</a></li>
+        <li><a href="#" data-filter=".hardware" class="teal">Hardware</a></li>
+        <li><a href="#" data-filter=".gamedev" class="orange">USPGameDev</a></li>
+        <li><a href="#" data-filter=".other">Outros</a></li>
+        </ul><!--/#portfolio-filter-->
+      </div>
 
-        <div class="portfolio-items">
-            <a href="#modalEvento" ng-repeat="evento in events | orderBy: '-data'" data-toggle="modal" ng-click="makeModal(evento)">
-              <div class="portfolio-item" ng-class="evento.classe">
-                <div class="portfolio-item-inner">
-                  <img class="img-responsive" ng-src="images/eventos/thumbs/{{evento.thumbnail}}" alt="">
-                  <div class="portfolio-info">
-                    <h3 ng-class="getColor(evento.classe)">{{evento.nome}}</h3>
-                    {{evento.palestrante}}
-                    <div class="preview" ng-class="getBackColor(evento.classe)">
-                      <i class="fa fa-eye"></i>
-                    </div>
-                  </div>
-                </div>
-              </div><!--/.portfolio-item-->
-            </a>
-        </div>
+      <div class="portfolio-items">
+        <a href="#modalEvento" ng-repeat="event in events | orderBy: '-data'"
+                               data-toggle="modal" ng-click="makeModal(evento)">
+          <div class="portfolio-item" ng-class="evento.classe">
+          <div class="portfolio-item-inner">
+            <img class="img-responsive" ng-src="images/eventos/thumbs/{{evento.thumbnail}}">
+            <div class="portfolio-info">
+            <h3 ng-class="getColor(evento.classe)">{{evento.nome}}</h3>
+            {{evento.palestrante}}
+            <div class="preview" ng-class="getBackColor(evento.classe)">
+              <i class="fa fa-eye"></i>
+            </div>
+            </div>
+          </div>
+          </div><!--/.portfolio-item-->
+        </a>
+      </div>
       </div><!--/.container-->
       <div id="modalEvento" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Confirmation</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Do you want to save changes you made to document before closing? {{blah}}</p>
-                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
-                </div>
-            </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"
+                    aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Confirmation</h4>
+          </div>
+          <div class="modal-body">
+            <p>Do you want to save changes you made to document before closing? {{blah}}</p>
+            <p class="text-warning">
+              <small>If you don't save, your changes will be lost.</small>
+            </p>
+          </div>
         </div>
       </div>
-    </section><!--/#EVENTOS-->
+    </div>
+  </section><!--/#EVENTOS-->
 
   <section id="services">
     <div class="container">
