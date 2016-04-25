@@ -91,7 +91,6 @@ app.controller("candiCtrl", function($scope, formService) {
                           assunto: $scope.form.assunto,
                           detalhes: $scope.form.detalhes
                         };
-            console.log(data);
             formService.sendForm(data, "Inscrição de Palestrante").then(function(){
                 alert("ok");
             });
@@ -198,6 +197,7 @@ app.service("colorService", function() {
 app.service("formService", function($http, $q) {
     this.sendForm = function(data, subject) {
         var deferred = $q.defer();
+        data._subject = subject;
         $http({
             url: "http://formspree.io/gustavo84171@hotmail.com",
             data: data,
