@@ -327,10 +327,15 @@
     resize: none;
 }
 
-.dark-sect .error-div {
+.dark-sect .alert-div {
     border: 2px solid #fff;
     border-radius: 8px;
     padding: 10px 20px;
+}
+
+.dark-sect .success-div {
+    font-size: 16px;
+    margin-top: 20px;
 }
 
 .btn-form-group{

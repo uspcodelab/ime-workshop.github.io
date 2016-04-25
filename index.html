@@ -124,11 +124,11 @@
               e nós resolvemos o <strong>onde</strong>, <strong>quando</strong> e
               <strong>com quem</strong> do evento.
             </p>
-            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"  ng-click="showingForm = true" ng-slide-down="!showingForm">
+            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms" ng-click="showForm()" ng-slide-down="sButton">
               <a class="btn btn-primary btn-lg palestra-btn">Inscreva-se!</a>
             </p>
-            <div class="row" ng-show="showingForm">
-                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-slide-down="showingForm">
+            <div class="row" ng-show="sFormInit">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-slide-down="sForm">
                     <form class="palestra-form">
                         <div class="form-group">
                             <label>Nome</label>
@@ -147,8 +147,8 @@
                             <textarea rows=4 name="detalhes" ng-model="form.detalhes" class="form-control" placeholder="Conte mais sobre seu evento">
                             </textarea>
                         </div>
-                        <div ng-slide-down="showingError" duration="0.7">
-                            <div class="error-div">
+                        <div ng-slide-down="sError" duration="0.7">
+                            <div class="alert-div">
                                 <span class="fa fa-warning"></span>&nbsp; &nbsp;Ei, preencha alguma coisa!
                             </div>
                         </div>
@@ -159,6 +159,13 @@
                             <button class="btn btn-primary btn-lg mini-palestra-btn" role="button" ng-click="submitForm()">Enviar</button>
                         </div>
                     </form>
+                </div>
+            </div>
+            <div class="row" ng-show="sOk">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-slide-down="sOk">
+                    <div class="alert-div success-div">
+                        <span class="fa fa-check-circle"></span>&nbsp; &nbsp;Enviado com sucesso!
+                    </div>
                 </div>
             </div>
           </div>
