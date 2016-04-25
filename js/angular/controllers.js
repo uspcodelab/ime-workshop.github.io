@@ -236,7 +236,7 @@ app.service("formService", function($http, $q) {
         data._subject = subject;
         data._cc = "gustavo84171@hotmail.com";
         $http({
-            url: "http://formspree.io/gustavo84171@hotmail.com",
+            url: "http://formspree.io/workshop@ime.usp.br",
             data: data,
             method: 'POST',
             headers: {
