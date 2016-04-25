@@ -240,11 +240,101 @@
     margin-top: 150px;
 }
 
-#cta2 .icon-circle img {
-    height: 65px;
-    width: 65px;
-    margin-bottom: 5px;
-    /* border-radius: 70px; */
+.dark-sect {
+    padding-bottom: 50px;
+    color: #fff;
+    padding-top: 70px;
+}
+
+.dark-sect h2 {
+    color: #fff;
+    font-size: 44px;
+    line-height: 1;
+}
+
+.dark-sect .btn.btn-primary.palestra-btn{
+    background-color:transparent;
+    border: 3px solid #ffffff;
+    border-radius: 8px;
+    color: #ffffff;
+    margin-top: 50px;
+}
+
+.dark-sect .btn.btn-primary.palestra-btn:hover{
+    background-color:white;
+}
+
+.dark-sect.purple-sect {
+    background: #440751;
+}
+
+.dark-sect.purple-sect .btn.btn-primary.palestra-btn:hover {
+    border: 3px solid #4b0959;
+    color: #4b0959;
+}
+
+.dark-sect.blue-sect {
+    background: #181950;
+}
+
+.dark-sect.blue-sect .btn.btn-primary.palestra-btn:hover {
+    border: 3px solid #181950;
+    color: #181950;
+}
+
+.dark-sect .palestra-form {
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.dark-sect .palestra-form label{
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.dark-sect .btn.btn-primary.mini-palestra-btn{
+    background-color:transparent;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    color: #ffffff;
+    margin: 0 auto;
+    margin-top: 20px;
+    transition: all 0.4s;
+}
+
+.dark-sect .btn.btn-primary.mini-palestra-btn:hover{
+    background-color:white;
+    border-radius: 8px;
+}
+
+.dark-sect.purple-sect .btn.btn-primary.mini-palestra-btn:hover {
+    border: 2px solid #4b0959;
+    color: #4b0959;
+}
+
+.dark-sect.blue-sect .btn.btn-primary.mini-palestra-btn:hover {
+    border: 2px solid #181950;
+    color: #181950;
+}
+
+.dark-sect textarea {
+    resize: none;
+}
+
+.dark-sect .error-div {
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.btn-form-group{
+    text-align: center;
 }
 
 .technologies{
@@ -314,28 +404,8 @@
     color:#720d88;
 }
 
-#cta2 {
-    padding-bottom: 50px;
-    background: #440751;
-}
-
 #work-process{
     background: #440751;
-}
-
-#cta2 a.btn.btn-primary.palestra-btn{
-    background-color:transparent;
-    border: 3px solid #ffffff;
-    border-radius: 8px;
-    color: #ffffff;
-    margin-top: 50px;
-}
-
-#cta2 a.btn.btn-primary.palestra-btn:hover{
-    background-color:white;
-    border: 3px solid #4b0959;
-    border-radius: 8px;
-    color: #4b0959;
 }
 
 .center-wrap {
