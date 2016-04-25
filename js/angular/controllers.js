@@ -190,7 +190,7 @@ app.service("colorService", function() {
     }
 });
 
-app.services("formService", function($http, $q) {
+app.service("formService", function($http, $q) {
     this.sendForm = function(data) {
         var deferred = $q.defer();
         $http({
