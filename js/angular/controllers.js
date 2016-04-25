@@ -87,10 +87,11 @@ app.controller("candiCtrl", function($scope, formService) {
         else {
             $scope.showingError = false;
             var data =  { nome: $scope.form.nome, 
-                          mail: $scope.form.email,
+                          mail: $scope.form.mail,
                           assunto: $scope.form.assunto,
                           detalhes: $scope.form.detalhes
                         };
+            console.log(data);
             formService.sendForm(data, "Inscrição de Palestrante").then(function(){
                 alert("ok");
             });
@@ -195,7 +196,7 @@ app.service("colorService", function() {
 });
 
 app.service("formService", function($http, $q) {
-    this.sendForm = function(data) {
+    this.sendForm = function(data, subject) {
         var deferred = $q.defer();
         $http({
             url: "http://formspree.io/gustavo84171@hotmail.com",
