@@ -76,7 +76,6 @@ app.controller("proxCtrl", function($scope, fetchEventos, colorService) {
 });
 
 app.controller("candiCtrl", function($scope, formService) {
-    console.log($scope);
     $scope.form = {};
     $scope.sButton = true;
     $scope.sFormInit = false; //para que não apareça antes da hora
@@ -109,7 +108,34 @@ app.controller("candiCtrl", function($scope, formService) {
 });
 
 app.controller("pedirCtrl", function($scope) {
-    $scope.showingForm = false;
+    $scope.form = {};
+    $scope.sButton = true;
+    $scope.sFormInit = false; //para que não apareça antes da hora
+    $scope.sForm = false;
+    $scope.sError = false;
+    $scope.sOk = false;
+
+    $scope.showForm = function() {
+        $scope.sForm = true;
+        $scope.sFormInit = true;
+        $scope.sButton = false;
+    }
+
+    $scope.submitForm = function() {
+        if(!$scope.form.nome && !$scope.form.tema && !$scope.form.detalhes)
+            $scope.sError = true;
+        else {
+            $scope.sError = false;
+            var data =  { nome: $scope.form.nome, 
+                          tema: $scope.form.tema,
+                          detalhes: $scope.form.detalhes
+                        };
+            formService.sendForm(data, "Pedido de Palestra").then(function(){
+                $scope.sForm = false;
+                $scope.sOk = true;
+            });
+        }
+    }
 });
 
 app.controller("listaCtrl", function($scope, fetchEventos, colorService){

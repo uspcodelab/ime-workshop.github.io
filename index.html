@@ -152,9 +152,6 @@
                                 <span class="fa fa-warning"></span>&nbsp; &nbsp;Ei, preencha alguma coisa!
                             </div>
                         </div>
-                        <input type="hidden" name="_subject" value="Inscrição de Palestrante" />
-                        <input type="hidden" name="_cc" value="gustavo84171@hotmail.com" />
-                        <input type="text" name="_gotcha" style="display:none" />
                         <div class="form-group btn-form-group">
                             <button class="btn btn-primary btn-lg mini-palestra-btn" role="button" ng-click="submitForm()">Enviar</button>
                         </div>
@@ -447,31 +444,44 @@
                 <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
                     texto de pedir palestra
                 </p>
-                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"  ng-click="showingForm = true" ng-slide-down="!showingForm">
-                  <a class="btn btn-primary btn-lg palestra-btn">Pedir!</a>
+                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms" ng-click="showForm()" ng-slide-down="sButton">
+                    <a class="btn btn-primary btn-lg palestra-btn">Pedir!</a>
                 </p>
-                <div class="row" ng-show="showingForm">
-                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-slide-down="showingForm">
+                <div class="row" ng-show="sFormInit">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-slide-down="sForm">
                         <form class="palestra-form">
                             <div class="form-group">
                                 <label>Nome</label>
-                                <input name="nome" type="text" class="form-control" placeholder="Seu nome (se quiser)">
+                                <input type="text" name="nome" ng-model="form.nome" class="form-control" placeholder="Seu nome (se quiser)">
                             </div>
                             <div class="form-group">
                                 <label>Tema</label>
-                                <input name="tema" type="text" class="form-control" placeholder="O tema que você quer">
+                                <input type="text" name="tema" ng-model="form.tema" class="form-control" placeholder="O tema que você quer">
                             </div>
                             <div class="form-group">
                                 <label>Detalhes</label>
-                                <textarea name="detalhes" rows=4 class="form-control" placeholder="Dê mais alguns detalhes"></textarea>
+                                <textarea rows=4 name="detalhes" ng-model="form.detalhes" class="form-control" placeholder="Dê mais alguns detalhes">
+                                </textarea>
                             </div>
-                            <input type="hidden" name="_subject" value="Pedido de Palestra" />
+                            <div ng-slide-down="sError" duration="0.7">
+                                <div class="alert-div">
+                                    <span class="fa fa-warning"></span>&nbsp; &nbsp;Ei, preencha alguma coisa!
+                                </div>
+                            </div>
+                            <input type="hidden" name="_subject" value="Inscrição de Palestrante" />
                             <input type="hidden" name="_cc" value="gustavo84171@hotmail.com" />
                             <input type="text" name="_gotcha" style="display:none" />
                             <div class="form-group btn-form-group">
-                                <button class="btn btn-primary btn-lg mini-palestra-btn">Enviar</button>
+                                <button class="btn btn-primary btn-lg mini-palestra-btn" role="button" ng-click="submitForm()">Enviar</button>
                             </div>
                         </form>
+                    </div>
+                </div>
+                <div class="row" ng-show="sOk">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-slide-down="sOk">
+                        <div class="alert-div success-div">
+                            <span class="fa fa-check-circle"></span>&nbsp; &nbsp;Enviado com sucesso!
+                        </div>
                     </div>
                 </div>
               </div>
