@@ -78,21 +78,31 @@ app.controller("proxCtrl", function($scope, fetchEventos, colorService) {
 app.controller("candiCtrl", function($scope, formService) {
     console.log($scope);
     $scope.form = {};
-    $scope.showingForm = false;
-    $scope.showingError = false;
-    $scope.showingSubmitted = false;
+    $scope.sButton = true;
+    $scope.sFormInit = false; //para que não apareça antes da hora
+    $scope.sForm = false;
+    $scope.sError = false;
+    $scope.sOk = false;
+
+    $scope.showForm = function() {
+        $scope.sForm = true;
+        $scope.sFormInit = true;
+        $scope.sButton = false;
+    }
+
     $scope.submitForm = function() {
         if(!$scope.form.nome && !$scope.form.email && !$scope.form.assunto && !$scope.form.detalhes)
-            $scope.showingError = true;
+            $scope.sError = true;
         else {
-            $scope.showingError = false;
+            $scope.sError = false;
             var data =  { nome: $scope.form.nome, 
                           mail: $scope.form.mail,
                           assunto: $scope.form.assunto,
                           detalhes: $scope.form.detalhes
                         };
             formService.sendForm(data, "Inscrição de Palestrante").then(function(){
-                alert("ok");
+                $scope.sForm = false;
+                $scope.sOk = true;
             });
         }
     }
@@ -198,6 +208,7 @@ app.service("formService", function($http, $q) {
     this.sendForm = function(data, subject) {
         var deferred = $q.defer();
         data._subject = subject;
+        data._cc = "gustavo84171@hotmail.com";
         $http({
             url: "http://formspree.io/gustavo84171@hotmail.com",
             data: data,
