@@ -75,7 +75,7 @@ app.controller("proxCtrl", function($scope, fetchEventos, colorService) {
     });
 });
 
-app.controller("candiCtrl", function($scope) {
+app.controller("candiCtrl", function($scope, formService) {
     console.log($scope);
     $scope.form = {};
     $scope.showingForm = false;
@@ -86,6 +86,10 @@ app.controller("candiCtrl", function($scope) {
             $scope.showingError = true;
         else {
             $scope.showingError = false;
+            var data = { nome: "jose", assunto: "banana"};
+            formService.sendForm(data).then(function(){
+                alert("ok");
+            });
         }
     }
 });
@@ -183,5 +187,23 @@ app.service("colorService", function() {
             default:
                 return "fa-lightbulb-o"; //classe falsa, não existe
         }
+    }
+});
+
+app.services("formService", function($http, $q) {
+    this.sendForm = function(data) {
+        var deferred = $q.defer();
+        $http({
+            url: "http://formspree.io/email@example.org",
+            data: data,
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).then(function(){
+            deferred.resolve();
+        });
+        return deferred.promise;
     }
 });

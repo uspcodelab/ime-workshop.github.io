@@ -129,7 +129,7 @@
             </p>
             <div class="row" ng-show="showingForm">
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-slide-down="showingForm">
-                    <form class="palestra-form" action="https://formspree.io/gustavo84171@hotmail.com" method="POST">
+                    <form class="palestra-form">
                         <div class="form-group">
                             <label>Nome</label>
                             <input type="text" name="nome" ng-model="form.nome" class="form-control" placeholder="Como te chamaremos">
@@ -156,7 +156,7 @@
                         <input type="hidden" name="_cc" value="gustavo84171@hotmail.com" />
                         <input type="text" name="_gotcha" style="display:none" />
                         <div class="form-group btn-form-group">
-                            <button class="btn btn-primary btn-lg mini-palestra-btn" ng-click="submitForm()">Enviar</button>
+                            <button class="btn btn-primary btn-lg mini-palestra-btn" role="button" ng-click="submitForm()">Enviar</button>
                         </div>
                     </form>
                 </div>
