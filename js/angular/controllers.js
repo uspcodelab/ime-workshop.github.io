@@ -194,7 +194,7 @@ app.service("formService", function($http, $q) {
     this.sendForm = function(data) {
         var deferred = $q.defer();
         $http({
-            url: "http://formspree.io/email@example.org",
+            url: "http://formspree.io/gustavo84171@hotmail.com",
             data: data,
             method: 'POST',
             headers: {
