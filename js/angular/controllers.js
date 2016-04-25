@@ -107,7 +107,7 @@ app.controller("candiCtrl", function($scope, formService) {
     }
 });
 
-app.controller("pedirCtrl", function($scope) {
+app.controller("pedirCtrl", function($scope, formService) {
     $scope.form = {};
     $scope.sButton = true;
     $scope.sFormInit = false; //para que não apareça antes da hora
