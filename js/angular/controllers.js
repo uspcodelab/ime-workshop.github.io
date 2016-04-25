@@ -198,8 +198,7 @@ app.service("formService", function($http, $q) {
             data: data,
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Accept': 'application/json'
             }
         }).then(function(){
             deferred.resolve();
