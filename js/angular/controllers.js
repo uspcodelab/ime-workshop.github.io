@@ -1,4 +1,4 @@
-var app = angular.module("workSite", ["flexcalendar"]);
+var app = angular.module("workSite", ["flexcalendar", "ng-slide-down"]);
 
 //CONFIG
 
@@ -75,8 +75,27 @@ app.controller("proxCtrl", function($scope, fetchEventos, colorService) {
     });
 });
 
-app.controller("listaCtrl", function($scope, fetchEventos, colorService) {
+app.controller("candiCtrl", function($scope) {
+    $scope.showingForm = false;
+    $scope.showingError = false;
+    $scope.showingSubmitted = false;
+    $scope.submitForm = function() {
+        var nome = $scope.nome;
+        var email = $scope.email;
+        var assunto = $scope.assunto;
+        var detalhes = $scope.detalhes;
+        if(nome == "" && email == "" && assunto == "" && detalhes == "")
+            $scope.showingError = true;
+    }
+});
+
+app.controller("pedirCtrl", function($scope) {
+    $scope.showingForm = false;
+});
+
+app.controller("listaCtrl", function($scope, fetchEventos, colorService){
     fetchEventos.fetchLista().then(function(data) {
+
         $scope.events = data;
     });
 

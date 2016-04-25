@@ -83,37 +83,35 @@
 
   <section id="upcoming" ng-controller="proxCtrl">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title text-center wow fadeInDown">Próximos Eventos</h2>
-        <p class="text-center wow fadeInDown">
-          Veja o que o IME Workshop está preparando.
-        </p>
-      </div>
+        <div class="section-header">
+          <h2 class="section-title text-center wow fadeInDown">Próximos Eventos</h2>
+          <p class="text-center wow fadeInDown">
+            Veja o que o IME Workshop está preparando - nossa agenda é cheia!
+          </p>
+        </div>
 
-      <div class="row row-eq-height">
-        <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1 wow fadeInLeft">
-          <flex-calendar options="options" events="events"></flex-calendar>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-5 event-list wow fadeInRight">
-          <div class="event-entry info-entry">
-            <div class="info-title" ng-show="showingNext">Vindo aí</div>
-            <div class="info-title" ng-hide="showingNext">{{curdate}}</div>
-            <div class="info-button" ng-hide="showingNext" ng-click="showNext()">
-              <span class="fa fa-chevron-left"></span>
+        <div class="row row-eq-height">
+            <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1 wow fadeInLeft">
+                <flex-calendar options="options" events="events"></flex-calendar>
             </div>
-          </div>
-          <div class="event-entry" ng-repeat="evento in listevents">
-            <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>
-            <h3>{{evento.nome}}</h3>
-            <p>{{evento.data}}</p>
-          </div>
-          <p class="no-events" ng-show="listevents.length == 0">Nenhum evento</p>
+            <div class="col-xs-12 col-sm-6 col-md-5 event-list wow fadeInRight">
+                <div class="event-entry info-entry">
+                    <div class="info-title" ng-show="showingNext">Vindo aí</div>
+                    <div class="info-title" ng-hide="showingNext">{{curdate}}</div>
+                    <div class="info-button" ng-hide="showingNext" ng-click="showNext()"><span class="fa fa-chevron-left"></span> Vindo aí</div>
+                </div>
+                <div class="event-entry" ng-repeat="evento in listevents | orderBy:'+data'">
+                    <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>
+                    <h3>{{evento.nome}}</h3>
+                    <p>{{evento.data}}</p>
+                </div>
+                <p class="no-events" ng-show="listevents.length == 0">Nenhum evento</p>
+            </div>
         </div>
-      </div>
     </div>
   </section><!--HOME-->
 
-  <section id="cta2">
+  <section class="dark-sect purple-sect" ng-controller="candiCtrl">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-xs-12">
@@ -126,14 +124,43 @@
               e nós resolvemos o <strong>onde</strong>, <strong>quando</strong> e
               <strong>com quem</strong> do evento.
             </p>
-            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
-              Mande um e-mail para: <strong>workshop@ime.usp.br</strong>
+            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"  ng-click="showingForm = true" ng-slide-down="!showingForm">
+              <a class="btn btn-primary btn-lg palestra-btn">Inscreva-se!</a>
             </p>
-            <!--
-            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
-              <a class="btn btn-primary btn-lg palestra-btn" href="#">Inscreva-se!</a>
-            </p>
-            -->
+            <div class="row" ng-show="showingForm">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-slide-down="showingForm">
+                    <form class="palestra-form">
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text" name="nome" ng-model="nome" class="form-control" placeholder="Como te chamaremos">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" ng-model="email" class="form-control" placeholder="Para falarmos com você">
+                        </div>
+                        <div class="form-group">
+                            <label>Assunto</label>
+                            <input type="text" name="assunto" ng-model="assunto" class="form-control" placeholder="O tema da palestra">
+                        </div>
+                        <div class="form-group">
+                            <label>Detalhes</label>
+                            <textarea rows=4 name="detalhes" ng-model="detalhes" class="form-control" placeholder="Conte mais sobre seu evento">
+                            </textarea>
+                        </div>
+                        <div ng-slide-down="showingError" duration="0.7">
+                            <div class="error-div">
+                                <span class="fa fa-warning"></span>&nbsp; &nbsp;Ei, preencha alguma coisa!
+                            </div>
+                        </div>
+                        <input type="hidden" name="_subject" value="Inscrição de Palestrante" />
+                        <input type="hidden" name="_cc" value="gustavo84171@hotmail.com" />
+                        <input type="text" name="_gotcha" style="display:none" />
+                        <div class="form-group btn-form-group">
+                            <button class="btn btn-primary btn-lg mini-palestra-btn" ng-click="submitForm()">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
           </div>
         </div>
       </div>
@@ -348,14 +375,13 @@
   <!--hackathon-->
 
   <section id="portfolio" ng-controller="listaCtrl">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title text-center wow fadeInDown">Eventos</h2>
-        <p class="text-center wow fadeInDown">
-          Lista de eventos do IME Workshop: veja o que já foi e o que ainda
-          está por vir - tudo separadinho pelas nossas parcerias.
-        </p>
-      </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title text-center wow fadeInDown">Lista de Eventos</h2>
+          <p class="text-center wow fadeInDown">
+            Dê uma olhada em quem já passou pelo IME Workshop.
+          </p>
+        </div>
 
       <div class="text-center">
         <ul class="portfolio-filter">
@@ -366,7 +392,6 @@
         <li><a href="#" data-filter=".other">Outros</a></li>
         </ul><!--/#portfolio-filter-->
       </div>
-
       <div class="portfolio-items">
         <a href="#modalEvento" ng-repeat="event in events | orderBy: '-data'"
                                data-toggle="modal" ng-click="makeModal(evento)">
@@ -403,6 +428,51 @@
       </div>
     </div>
   </section><!--/#EVENTOS-->
+
+    <section class="dark-sect blue-sect" ng-controller="pedirCtrl">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-xs-12">
+              <div class="text-center">
+                <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
+                  TITULO PEDIR PALESTRA
+                </h2>
+                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
+                    texto de pedir palestra
+                </p>
+                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"  ng-click="showingForm = true" ng-slide-down="!showingForm">
+                  <a class="btn btn-primary btn-lg palestra-btn">Pedir!</a>
+                </p>
+                <div class="row" ng-show="showingForm">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-slide-down="showingForm">
+                        <form class="palestra-form">
+                            <div class="form-group">
+                                <label>Nome</label>
+                                <input name="nome" type="text" class="form-control" placeholder="Seu nome (se quiser)">
+                            </div>
+                            <div class="form-group">
+                                <label>Tema</label>
+                                <input name="tema" type="text" class="form-control" placeholder="O tema que você quer">
+                            </div>
+                            <div class="form-group">
+                                <label>Detalhes</label>
+                                <textarea name="detalhes" rows=4 class="form-control" placeholder="Dê mais alguns detalhes"></textarea>
+                            </div>
+                            <input type="hidden" name="_subject" value="Pedido de Palestra" />
+                            <input type="hidden" name="_cc" value="gustavo84171@hotmail.com" />
+                            <input type="text" name="_gotcha" style="display:none" />
+                            <div class="form-group btn-form-group">
+                                <button class="btn btn-primary btn-lg mini-palestra-btn">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  <!--/#cta2-->
 
   <section id="services">
     <div class="container">
@@ -563,6 +633,7 @@
   <script src="js/moment-pt-br.js"></script>
   <script src="js/angular.min.js"></script>
   <script src="js/angular-translate.min.js"></script>
+  <script src="js/ng-slide-down.js"></script>
   <script src="js/flex-calendar.js"></script>
   <script src="js/angular/controllers.js"></script>
 
