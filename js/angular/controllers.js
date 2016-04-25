@@ -102,6 +102,7 @@ app.controller("candiCtrl", function($scope, formService) {
             formService.sendForm(data, "Inscrição de Palestrante").then(function(){
                 $scope.sForm = false;
                 $scope.sOk = true;
+                $scope.form = {};
             });
         }
     }
@@ -133,6 +134,7 @@ app.controller("pedirCtrl", function($scope, formService) {
             formService.sendForm(data, "Pedido de Palestra").then(function(){
                 $scope.sForm = false;
                 $scope.sOk = true;
+                $scope.form = {};
             });
         }
     }
