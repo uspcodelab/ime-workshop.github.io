@@ -76,16 +76,17 @@ app.controller("proxCtrl", function($scope, fetchEventos, colorService) {
 });
 
 app.controller("candiCtrl", function($scope) {
+    console.log($scope);
+    $scope.form = {};
     $scope.showingForm = false;
     $scope.showingError = false;
     $scope.showingSubmitted = false;
     $scope.submitForm = function() {
-        var nome = $scope.nome;
-        var email = $scope.email;
-        var assunto = $scope.assunto;
-        var detalhes = $scope.detalhes;
-        if(nome == "" && email == "" && assunto == "" && detalhes == "")
+        if(!$scope.form.nome && !$scope.form.email && !$scope.form.assunto && !$scope.form.detalhes)
             $scope.showingError = true;
+        else {
+            $scope.showingError = false;
+        }
     }
 });
 
