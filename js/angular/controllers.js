@@ -86,8 +86,12 @@ app.controller("candiCtrl", function($scope, formService) {
             $scope.showingError = true;
         else {
             $scope.showingError = false;
-            var data = { nome: "jose", assunto: "banana"};
-            formService.sendForm(data).then(function(){
+            var data =  { nome: $scope.form.nome, 
+                         email: $scope.form.email,
+                         assunto: $scope.form.assunto,
+                         detalhes: $scope.form.detalhes
+                        };
+            formService.sendForm(data, "Inscrição de Palestrante").then(function(){
                 alert("ok");
             });
         }
