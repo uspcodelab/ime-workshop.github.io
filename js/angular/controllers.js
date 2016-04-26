@@ -236,7 +236,6 @@ app.service("formService", function($http, $q) {
     this.sendForm = function(data, subject) {
         var deferred = $q.defer();
         data._subject = subject;
-        data._cc = "gustavo84171@hotmail.com";
         $http({
             url: "http://formspree.io/workshop@ime.usp.br",
             data: data,
