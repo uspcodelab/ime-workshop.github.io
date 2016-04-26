@@ -473,31 +473,12 @@
     padding: 100px 0;
 }
 
-#hackathon .icon-circle {
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    border: 2px solid #720d88;
-    border-radius: 100px;
-    position: relative;
-}
-
 #hackathon .icon-circle.gray{
     border-color: #999;
 }
 
-#hackathon .info-text {
-    font-size: 16px;
-    font-style: italic;
-    color: #999;
-    margin-top: 10px;
-    font-weight: normal;
-}
-
 .hackathon-teaser {
     background-color: #f5f5f5;
-    border: 1px solid #e1e1e1;
     text-align: center;
     padding: 25px 25px;
     color: #333;
@@ -517,6 +498,24 @@
     margin-left: 20px;
 }
 
+.hackathon-teaser .info-text {
+    font-size: 16px;
+    font-style: italic;
+    color: #999;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+.hackathon-teaser .icon-circle {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border: 2px solid #720d88;
+    border-radius: 100px;
+    position: relative;
+}
+
 #portfolio .portfolio-filter > li a.active:after {
     border-color: #720d88  transparent transparent transparent;
 }
@@ -528,7 +527,7 @@
 }
 
 #portfolio .portfolio-item {
-  width: 19.9%;
+  width: 24.9%;
 }
 
 #portfolio .portfolio-item .portfolio-item-inner {
@@ -555,6 +554,7 @@
 #portfolio .portfolio-item .portfolio-item-inner .portfolio-info h3 {
   color: #444;
   font-size: 18px;
+  margin-right: 40px;
 }
 
 #portfolio .portfolio-item .portfolio-item-inner .portfolio-info .preview {
