@@ -4,7 +4,7 @@
         "palestrante": "Grupo de Hardware Livre",
         "classe": "hardware",
         "data":"03/03/2016",
-        "hora": "14h as 17h",
+        "hora": "14h às 17h",
         "local": "Sala B04",
         "descricao": "",
         "thumbnail": "01.jpg"
@@ -14,17 +14,17 @@
         "palestrante": "Grupo de Hardware Livre",
         "classe": "hardware",
         "data":"10/03/2016",
-        "hora": "14h as 17h",
+        "hora": "14h às 17h",
         "local": "Sala B04",
         "descricao": "",
         "thumbnail": "01.jpg"
     },
     {
-        "nome": "Programação funcional de verdade",
-        "palestrante": "",
+        "nome": "Programação Funcional de Verdade",
+        "palestrante": "Vinícius Hana",
         "classe": "nubank",
         "data":"18/03/2016",
-        "hora": "13h as 14h",
+        "hora": "13h às 14h",
         "local": "Auditório do CCSL",
         "descricao": "Programação funcional existe há muito tempo mas somente nos últimos anos tem ganho a atenção de muitas empresas e entusiastas. Entenda o porquê do interesse ter aumentado cada vez mais",
         "thumbnail": "01.jpg"
@@ -34,7 +34,7 @@
         "palestrante": "Wilson Kazuo Mizutani",
         "classe": "gamedev",
         "data":"06/04/2016",
-        "hora": "13h as 14h",
+        "hora": "13h às 14h",
         "local": "Auditório do CCSL",
         "descricao": "",
         "thumbnail": "01.jpg"
@@ -44,7 +44,7 @@
         "palestrante": "Lucas Sung Jun Hong",
         "classe": "outros",
         "data":"14/04/2016",
-        "hora": "14h as 17h",
+        "hora": "14h às 17h",
         "local": "Sala 258A (BCC)",
         "descricao": "",
         "thumbnail": "01.jpg"
@@ -54,7 +54,7 @@
         "palestrante": "Wilson Kazuo Mizutani",
         "classe": "gamedev",
         "data":"27/04/2016",
-        "hora": "16h as 18h",
+        "hora": "16h às 18h",
         "local": "Sala B07",
         "descricao": "",
         "thumbnail": "01.jpg"

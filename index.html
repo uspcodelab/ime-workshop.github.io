@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=false">
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="">
   <meta name="author" content="">
   <title>IME Workshop</title>
@@ -338,14 +338,14 @@
       </div>
       <div class="portfolio-items">
         <a href="#modalEvento" ng-repeat="event in events | orderBy: '-data'"
-                               data-toggle="modal" ng-click="makeModal(evento)">
-          <div class="portfolio-item" ng-class="evento.classe">
+                               data-toggle="modal" ng-click="makeModal(event)">
+          <div class="portfolio-item" ng-class="event.classe">
             <div class="portfolio-item-inner">
-              <img class="img-responsive" ng-src="images/eventos/thumbs/{{evento.thumbnail}}">
+              <img class="img-responsive" ng-src="images/eventos/thumbs/{{event.thumbnail}}">
               <div class="portfolio-info">
-                <h3 ng-class="getColor(evento.classe)">{{evento.nome}}</h3>
-                {{evento.palestrante}}
-                <div class="preview" ng-class="getBackColor(evento.classe)">
+                <h3 ng-class="getColor(event.classe)">{{event.nome}}</h3>
+                {{event.palestrante}}
+                <div class="preview" ng-class="getBackColor(event.classe)">
                   <i class="fa fa-eye"></i>
                 </div>
               </div>
@@ -354,7 +354,7 @@
         </a>
       </div>
       </div><!--/.container-->
-      <div id="modalEvento" class="modal fade">
+<!--       <div id="modalEvento" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -370,7 +370,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </section><!--/#EVENTOS-->
 
   <section class="dark-sect purple-sect" ng-controller="pedirCtrl">
@@ -382,7 +382,7 @@
               NÃO ENCONTROU O SEU ASSUNTO FAVORITO?
             </h2>
             <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
-              Fale com a gente e <b>vamos te ajudar</b> a trazer uma palestra/workshop
+              Fale com a gente e <b>vamos procurar trazer</b> uma palestra/workshop
               sobre ele para o IME!
             </p>
             <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"
