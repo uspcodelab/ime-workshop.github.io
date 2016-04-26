@@ -495,26 +495,24 @@
     font-weight: normal;
 }
 
-.hackathon-div {
-    margin-top: 20px;
+.hackathon-teaser {
     background-color: #f5f5f5;
-    border: 1px solid #DDD;
-    border-radius: 6px;
+    border: 1px solid #e1e1e1;
     text-align: center;
-    padding: 20px 30px;
+    padding: 25px 25px;
     color: #333;
     font-size: 22px;
     font-weight: bold;
-    display:flex;
+    display: flex;
 }
 
-.hackathon-div > div {
+.hackathon-teaser > div {
     align-self: center;
     width: 100%;
     margin-left: 0;
 } 
 
-.hackathon-div > div p{
+.hackathon-teaser > div p {
     margin-bottom: 0;
     margin-left: 20px;
 }
