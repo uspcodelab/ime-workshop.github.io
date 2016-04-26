@@ -83,31 +83,33 @@
 
   <section id="upcoming" ng-controller="proxCtrl">
     <div class="container">
-        <div class="section-header">
-          <h2 class="section-title text-center wow fadeInDown">Próximos Eventos</h2>
-          <p class="text-center wow fadeInDown">
-            Veja o que o IME Workshop está preparando - nossa agenda é cheia!
-          </p>
-        </div>
+      <div class="section-header">
+        <h2 class="section-title text-center wow fadeInDown">Próximos Eventos</h2>
+        <p class="text-center wow fadeInDown">
+          Veja o que o IME Workshop está preparando - nossa agenda é cheia!
+        </p>
+      </div>
 
-        <div class="row row-eq-height">
-            <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1 wow fadeInLeft">
-                <flex-calendar options="options" events="events"></flex-calendar>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-5 event-list wow fadeInRight">
-                <div class="event-entry info-entry">
-                    <div class="info-title" ng-show="showingNext">Vindo aí</div>
-                    <div class="info-title" ng-hide="showingNext">{{curdate}}</div>
-                    <div class="info-button" ng-hide="showingNext" ng-click="showNext()"><span class="fa fa-chevron-left"></span> Vindo aí</div>
-                </div>
-                <div class="event-entry" ng-repeat="evento in listevents | orderBy:'+data'">
-                    <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>
-                    <h3>{{evento.nome}}</h3>
-                    <p>{{evento.data}}</p>
-                </div>
-                <p class="no-events" ng-show="listevents.length == 0">Nenhum evento</p>
-            </div>
+      <div class="row row-eq-height">
+        <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1 wow fadeInLeft">
+          <flex-calendar options="options" events="events"></flex-calendar>
         </div>
+        <div class="col-xs-12 col-sm-6 col-md-5 event-list wow fadeInRight">
+          <div class="event-entry info-entry">
+            <div class="info-title" ng-show="showingNext">Vindo aí</div>
+            <div class="info-title" ng-hide="showingNext">{{curdate}}</div>
+            <div class="info-button" ng-hide="showingNext" ng-click="showNext()">
+              <span class="fa fa-chevron-left"></span> Vindo aí
+            </div>
+          </div>
+          <div class="event-entry" ng-repeat="evento in listevents | orderBy:'+data'">
+            <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>
+            <h3>{{evento.nome}}</h3>
+            <p>{{evento.data}}</p>
+          </div>
+          <p class="no-events" ng-show="listevents.length == 0">Nenhum evento</p>
+        </div>
+      </div>
     </div>
   </section><!--HOME-->
 
@@ -124,46 +126,58 @@
               e nós resolvemos o <strong>onde</strong>, <strong>quando</strong> e
               <strong>com quem</strong> do evento.
             </p>
-            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms" ng-click="showForm()" ng-slide-down="sButton">
+            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"
+               ng-click="showForm()" ng-slide-down="sButton">
               <a class="btn btn-primary btn-lg palestra-btn">Inscreva-se!</a>
             </p>
             <div class="row" ng-show="sFormInit">
-                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-slide-down="sForm">
-                    <form class="palestra-form">
-                        <div class="form-group">
-                            <label>Nome</label>
-                            <input type="text" name="nome" ng-model="form.nome" class="form-control" placeholder="Como te chamaremos">
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="text" name="mail" ng-model="form.mail" class="form-control" placeholder="Para falarmos com você">
-                        </div>
-                        <div class="form-group">
-                            <label>Assunto</label>
-                            <input type="text" name="assunto" ng-model="form.assunto" class="form-control" placeholder="O tema da palestra">
-                        </div>
-                        <div class="form-group">
-                            <label>Detalhes</label>
-                            <textarea rows=4 name="detalhes" ng-model="form.detalhes" class="form-control" placeholder="Conte mais sobre seu evento">
-                            </textarea>
-                        </div>
-                        <div ng-slide-down="sError" duration="0.7">
-                            <div class="alert-div">
-                                <span class="fa fa-warning"></span>&nbsp; &nbsp;Ei, preencha alguma coisa!
-                            </div>
-                        </div>
-                        <div class="form-group btn-form-group">
-                            <button class="btn btn-primary btn-lg mini-palestra-btn" role="button" ng-click="submitForm()">Enviar</button>
-                        </div>
-                    </form>
-                </div>
+              <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3"
+                   ng-slide-down="sForm">
+                <form class="palestra-form">
+                  <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" name="nome" ng-model="form.nome"
+                           class="form-control" placeholder="Como te chamaremos">
+                  </div>
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" name="mail" ng-model="form.mail"
+                           class="form-control" placeholder="Para falarmos com você">
+                  </div>
+                  <div class="form-group">
+                    <label>Assunto</label>
+                    <input type="text" name="assunto" ng-model="form.assunto"
+                           class="form-control" placeholder="O tema da palestra">
+                  </div>
+                  <div class="form-group">
+                    <label>Detalhes</label>
+                    <textarea rows=4 name="detalhes" ng-model="form.detalhes"
+                              class="form-control" placeholder="Conte-nos mais sobre seu evento">
+                    </textarea>
+                  </div>
+                  <div ng-slide-down="sError" duration="0.7">
+                    <div class="alert-div">
+                      <span class="fa fa-warning"></span>
+                      &nbsp; &nbsp;Ei! Preencha alguma coisa!
+                    </div>
+                  </div>
+                  <div class="form-group btn-form-group">
+                    <button class="btn btn-primary btn-lg mini-palestra-btn"
+                            role="button" ng-click="submitForm()">
+                      Enviar
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
             <div class="row" ng-show="sOk">
-                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-slide-down="sOk">
-                    <div class="alert-div success-div">
-                        <span class="fa fa-check-circle"></span>&nbsp; &nbsp;Enviado com sucesso!
-                    </div>
+              <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3"
+                   ng-slide-down="sOk">
+                <div class="alert-div success-div">
+                  <span class="fa fa-check-circle"></span>
+                  &nbsp; &nbsp;Enviado com sucesso!
                 </div>
+              </div>
             </div>
           </div>
         </div>
@@ -379,13 +393,13 @@
   <!--hackathon-->
 
   <section id="portfolio" ng-controller="listaCtrl">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title text-center wow fadeInDown">Lista de Eventos</h2>
-          <p class="text-center wow fadeInDown">
-            Dê uma olhada em quem já passou pelo IME Workshop.
-          </p>
-        </div>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title text-center wow fadeInDown">Lista de Eventos</h2>
+        <p class="text-center wow fadeInDown">
+          Dê uma olhada em quem já passou pelo IME Workshop.
+        </p>
+      </div>
 
       <div class="text-center">
         <ul class="portfolio-filter">
@@ -400,16 +414,16 @@
         <a href="#modalEvento" ng-repeat="event in events | orderBy: '-data'"
                                data-toggle="modal" ng-click="makeModal(evento)">
           <div class="portfolio-item" ng-class="evento.classe">
-          <div class="portfolio-item-inner">
-            <img class="img-responsive" ng-src="images/eventos/thumbs/{{evento.thumbnail}}">
-            <div class="portfolio-info">
-            <h3 ng-class="getColor(evento.classe)">{{evento.nome}}</h3>
-            {{evento.palestrante}}
-            <div class="preview" ng-class="getBackColor(evento.classe)">
-              <i class="fa fa-eye"></i>
+            <div class="portfolio-item-inner">
+              <img class="img-responsive" ng-src="images/eventos/thumbs/{{evento.thumbnail}}">
+              <div class="portfolio-info">
+                <h3 ng-class="getColor(evento.classe)">{{evento.nome}}</h3>
+                {{evento.palestrante}}
+                <div class="preview" ng-class="getBackColor(evento.classe)">
+                  <i class="fa fa-eye"></i>
+                </div>
+              </div>
             </div>
-            </div>
-          </div>
           </div><!--/.portfolio-item-->
         </a>
       </div>
@@ -433,62 +447,71 @@
     </div>
   </section><!--/#EVENTOS-->
 
-    <section class="dark-sect blue-sect" ng-controller="pedirCtrl">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-xs-12">
-              <div class="text-center">
-                <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
-                  TITULO PEDIR PALESTRA
-                </h2>
-                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
-                    texto de pedir palestra
-                </p>
-                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms" ng-click="showForm()" ng-slide-down="sButton">
-                    <a class="btn btn-primary btn-lg palestra-btn">Pedir!</a>
-                </p>
-                <div class="row" ng-show="sFormInit">
-                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-slide-down="sForm">
-                        <form class="palestra-form">
-                            <div class="form-group">
-                                <label>Nome</label>
-                                <input type="text" name="nome" ng-model="form.nome" class="form-control" placeholder="Seu nome (se quiser)">
-                            </div>
-                            <div class="form-group">
-                                <label>Tema</label>
-                                <input type="text" name="tema" ng-model="form.tema" class="form-control" placeholder="O tema que você quer">
-                            </div>
-                            <div class="form-group">
-                                <label>Detalhes</label>
-                                <textarea rows=4 name="detalhes" ng-model="form.detalhes" class="form-control" placeholder="Dê mais alguns detalhes">
-                                </textarea>
-                            </div>
-                            <div ng-slide-down="sError" duration="0.7">
-                                <div class="alert-div">
-                                    <span class="fa fa-warning"></span>&nbsp; &nbsp;Ei, preencha alguma coisa!
-                                </div>
-                            </div>
-                            <input type="hidden" name="_subject" value="Inscrição de Palestrante" />
-                            <input type="hidden" name="_cc" value="gustavo84171@hotmail.com" />
-                            <input type="text" name="_gotcha" style="display:none" />
-                            <div class="form-group btn-form-group">
-                                <button class="btn btn-primary btn-lg mini-palestra-btn" role="button" ng-click="submitForm()">Enviar</button>
-                            </div>
-                        </form>
+  <section class="dark-sect blue-sect" ng-controller="pedirCtrl">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-xs-12">
+          <div class="text-center">
+            <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
+              TITULO PEDIR PALESTRA
+            </h2>
+            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
+              texto de pedir palestra
+            </p>
+            <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"
+               ng-click="showForm()" ng-slide-down="sButton">
+              <a class="btn btn-primary btn-lg palestra-btn">Pedir!</a>
+            </p>
+            <div class="row" ng-show="sFormInit">
+              <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3"
+                   ng-slide-down="sForm">
+                <form class="palestra-form">
+                  <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" name="nome" ng-model="form.nome"
+                           class="form-control" placeholder="Seu nome (se quiser)">
+                  </div>
+                  <div class="form-group">
+                    <label>Tema</label>
+                    <input type="text" name="tema" ng-model="form.tema"
+                           class="form-control" placeholder="O tema que você quer">
+                  </div>
+                  <div class="form-group">
+                    <label>Detalhes</label>
+                    <textarea rows=4 name="detalhes" ng-model="form.detalhes"
+                              class="form-control" placeholder="Dê mais alguns detalhes">
+                    </textarea>
+                  </div>
+                  <div ng-slide-down="sError" duration="0.7">
+                    <div class="alert-div">
+                      <span class="fa fa-warning"></span>
+                      &nbsp; &nbsp;Ei! Preencha alguma coisa!
                     </div>
-                </div>
-                <div class="row" ng-show="sOk">
-                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-slide-down="sOk">
-                        <div class="alert-div success-div">
-                            <span class="fa fa-check-circle"></span>&nbsp; &nbsp;Enviado com sucesso!
-                        </div>
-                    </div>
+                  </div>
+                  <input type="hidden" name="_subject" value="Inscrição de Palestrante" />
+                  <input type="hidden" name="_cc" value="gustavo84171@hotmail.com" />
+                  <input type="text" name="_gotcha" style="display:none" />
+                  <div class="form-group btn-form-group">
+                    <button class="btn btn-primary btn-lg mini-palestra-btn"
+                            role="button" ng-click="submitForm()">Enviar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row" ng-show="sOk">
+              <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3"
+                   ng-slide-down="sOk">
+                <div class="alert-div success-div">
+                  <span class="fa fa-check-circle"></span>
+                  &nbsp; &nbsp;Enviado com sucesso!
                 </div>
               </div>
             </div>
           </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
   <!--/#cta2-->
 
   <section id="services">
