@@ -142,8 +142,8 @@ app.controller("pedirCtrl", function($scope, formService) {
 
 app.controller("listaCtrl", function($scope, fetchEventos, colorService){
     fetchEventos.fetchLista().then(function(data) {
-
         $scope.events = data;
+        console.log(data);
     });
 
     $scope.getColor = colorService.getColor;
