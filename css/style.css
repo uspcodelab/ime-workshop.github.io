@@ -201,11 +201,20 @@
     background-color: #272727;
 }
 
+#upcoming .ev-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-direction: column;
+}
+
 #upcoming .event-list{
     border: 1px solid #DDD;
     border-radius: 6px;
     background-color: #f5f5f5;
     padding: 0;
+    flex: 1;
 }
 
 #upcoming .event-list .event-entry {
@@ -583,10 +592,6 @@
     color: #fff !important;
 }
 
-#portfolio .portfolio-item {
-  width: 24.9%;
-}
-
 #portfolio .portfolio-item .portfolio-item-inner {
     border: 1px solid #ddd;
     border-radius: 6px;
@@ -601,7 +606,7 @@
   opacity: 1;
   position: relative;
   padding: 10px;
-  background: #fff;
+  background: #f5f5f5;
   color: #666;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -611,7 +616,7 @@
 #portfolio .portfolio-item .portfolio-item-inner .portfolio-info h3 {
   color: #444;
   font-size: 18px;
-  margin-right: 40px;
+  margin-top: 10px;
 }
 
 #portfolio .portfolio-item .portfolio-item-inner .portfolio-info .preview {
@@ -717,7 +722,19 @@
         margin-bottom: 20px;
     }
 
+    #upcoming .event-list{
+        height: 390px;
+    }
+
+    #portfolio .portfolio-item {
+        width: 49.9%;
+    }
+
     #hackathon .icon-circle {
         margin-bottom: 20px;
+    }
+
+    .modal-evento .title-row .title-div{
+        margin-top: 20px;
     }
 }

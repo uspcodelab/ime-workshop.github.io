@@ -96,22 +96,24 @@
         <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1 wow fadeInLeft">
           <flex-calendar options="options" events="events"></flex-calendar>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-5 event-list wow fadeInRight">
-          <div class="event-entry info-entry">
-            <div class="info-title" ng-show="showingNext">Vindo aí</div>
-            <div class="info-title" ng-hide="showingNext">{{curdate}}</div>
-            <div class="info-button" ng-hide="showingNext" ng-click="showNext()">
-              <span class="fa fa-chevron-left"></span> Vindo aí
-            </div>
-          </div>
-          <a ng-repeat="evento in listevents | orderBy:'+data'" data-toggle="modal" href="#modalEvento2" ng-click="makeModal(evento)">
-              <div class="event-entry">
-                <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>
-                <h3>{{evento.nome}}</h3>
-                <p>{{evento.data}}</p>
+        <div class="col-xs-12 col-sm-6 col-md-5 ev-wrap wow fadeInRight">
+            <div class="event-list">
+              <div class="event-entry info-entry">
+                <div class="info-title" ng-show="showingNext">Vindo aí</div>
+                <div class="info-title" ng-hide="showingNext">{{curdate}}</div>
+                <div class="info-button" ng-hide="showingNext" ng-click="showNext()">
+                  <span class="fa fa-chevron-left"></span> Vindo aí
+                </div>
               </div>
-          </a>
-          <p class="no-events" ng-show="listevents.length == 0">Nenhum evento</p>
+              <a ng-repeat="evento in listevents | orderBy:'+data'" data-toggle="modal" href="#modalEvento2" ng-click="makeModal(evento)">
+                  <div class="event-entry">
+                    <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>
+                    <h3>{{evento.nome}}</h3>
+                    <p>{{evento.data}}</p>
+                  </div>
+              </a>
+              <p class="no-events" ng-show="listevents.length == 0">Nenhum evento</p>
+            </div>
         </div>
       </div>
     </div>
@@ -136,11 +138,11 @@
                 </div>
             </div>
             <div class="row info-row">
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-6 col-sm-6">
                     <p class="label-p" ng-class="getColor(curvento.classe)">Local</p>
                     <p>{{curvento.local}}</p>
                 </div>
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-6 col-sm-6">
                     <p class="label-p" ng-class="getColor(curvento.classe)">Data</p>
                     <p><b>{{curvento.data}}</b>, {{curvento.hora}}</p>
                 </div>
@@ -445,11 +447,11 @@
                     </div>
                 </div>
                 <div class="row info-row">
-                    <div class="col-xs-12 col-sm-6">
+                    <div class="col-xs-6 col-sm-6">
                         <p class="label-p" ng-class="getColor(curvento.classe)">Local</p>
                         <p>{{curvento.local}}</p>
                     </div>
-                    <div class="col-xs-12 col-sm-6">
+                    <div class="col-xs-6 col-sm-6">
                         <p class="label-p" ng-class="getColor(curvento.classe)">Data</p>
                         <p><b>{{curvento.data}}</b>, {{curvento.hora}}</p>
                     </div>
