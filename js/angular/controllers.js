@@ -30,11 +30,12 @@ app.config(function ($translateProvider) {
 
 //CONTROLLERS
 
-app.controller("proxCtrl", function($scope, fetchEventos, colorService) {
+app.controller("proxCtrl", function($scope, fetchEventos, partnerService, formService) {
 
     moment.locale("pt-br");
-    $scope.getIcon = colorService.getIcon;
-    $scope.getColor = colorService.getColor;
+    $scope.getIcon = partnerService.getIcon;
+    $scope.getColor = partnerService.getColor;
+    $scope.getBorderColor = partnerService.getBorderColor;
     $scope.listevents = [];
     $scope.showingNext = true;
     $scope.curdate = null;
@@ -63,7 +64,7 @@ app.controller("proxCtrl", function($scope, fetchEventos, colorService) {
         for (var x in data) {
             var evento = data[x];
             evento.date = moment(evento.data, "DD/MM/YYYY").add(1, "days").format("YYYY-MM-DD");
-            evento.eventClass = colorService.getEventColor(evento.classe);
+            evento.eventClass = partnerService.getEventColor(evento.classe);
             events.push(evento);
         }
         $scope.events = events;
@@ -73,6 +74,46 @@ app.controller("proxCtrl", function($scope, fetchEventos, colorService) {
         $scope.nextevents = data;
         $scope.listevents = data;
     });
+
+    //Opções do modal
+    $scope.sAlert = false;
+    $scope.sSuccess = false;
+
+    //chamado ao abrir um modal novo
+    $scope.makeModal = function(evento) {
+        $scope.curvento = evento;
+        $scope.sAlert = false;
+        $scope.sSuccess = false;
+        $scope.feedback = "";
+    }
+
+    $scope.sendFeed = function() {
+        if(!$scope.feedback) {
+            $scope.sSuccess = false;
+            $scope.sAlert = true;
+        }
+        else {
+            $scope.sAlert = false;
+            $scope.sSuccess = true;
+            data = {};
+            data.feedback = $scope.feedback;
+            data.palestra = $scope.curvento.nome;
+            formService.sendForm(data, "Feedback de Palestra");
+            $scope.feedback = "";
+        }
+
+    }
+
+    //verifica se o evento do modal já passou pra poder exibir o feedback
+    $scope.isPast = function() {
+        if($scope.curvento) {
+            var date = moment($scope.curvento.data, "DD/MM/YYYY");
+            //seta a hora para 19 para que o form de feedback só fique disponivel a noite
+            date.hours(19);
+            return date.isBefore(moment(), "hour");
+        }
+        return false;
+    }
 });
 
 app.controller("candiCtrl", function($scope, formService) {
@@ -140,17 +181,51 @@ app.controller("pedirCtrl", function($scope, formService) {
     }
 });
 
-app.controller("listaCtrl", function($scope, fetchEventos, colorService){
+app.controller("listaCtrl", function($scope, fetchEventos, partnerService, formService){
     fetchEventos.fetchLista().then(function(data) {
         $scope.events = data;
-        console.log(data);
     });
 
-    $scope.getColor = colorService.getColor;
-    $scope.getBackColor = colorService.getBackColor;
+    $scope.sAlert = false;
+    $scope.sSuccess = false;
+    $scope.getColor = partnerService.getColor;
+    $scope.getBackColor = partnerService.getBackColor;
+    $scope.getBorderColor = partnerService.getBorderColor;
 
+    //chamado ao abrir um modal novo
     $scope.makeModal = function(evento) {
         $scope.curvento = evento;
+        $scope.sAlert = false;
+        $scope.sSuccess = false;
+        $scope.feedback = "";
+    }
+
+    $scope.sendFeed = function() {
+        if(!$scope.feedback) {
+            $scope.sSuccess = false;
+            $scope.sAlert = true;
+        }
+        else {
+            $scope.sAlert = false;
+            $scope.sSuccess = true;
+            data = {};
+            data.feedback = $scope.feedback;
+            data.palestra = $scope.curvento.nome;
+            formService.sendForm(data, "Feedback de Palestra");
+            $scope.feedback = "";
+        }
+
+    }
+
+    //verifica se o evento do modal já passou pra poder exibir o feedback
+    $scope.isPast = function() {
+        if($scope.curvento) {
+            var date = moment($scope.curvento.data, "DD/MM/YYYY");
+            //seta a hora para 19 para que o form de feedback só fique disponivel a noite
+            date.hours(19);
+            return date.isBefore(moment(), "hour");
+        }
+        return false;
     }
 });
 
@@ -196,7 +271,7 @@ app.service("fetchEventos", function($http, $q) {
     }
 });
 
-app.service("colorService", function() {
+app.service("partnerService", function() {
     this.getColor = function(classe) {
         switch(classe) {
             case "nubank":
@@ -206,7 +281,7 @@ app.service("colorService", function() {
             case "gamedev":
                 return "orange";
             default:
-                return "def"; //classe falsa, não existe
+                return "gray";
         }
     }
 
@@ -216,6 +291,10 @@ app.service("colorService", function() {
 
     this.getEventColor = function(classe) {
         return this.getColor(classe)+"-event";
+    }
+
+    this.getBorderColor = function(classe) {
+        return this.getColor(classe)+"-border";
     }
 
     this.getIcon = function(classe) {
