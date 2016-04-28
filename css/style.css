@@ -567,10 +567,6 @@
     padding: 100px 0;
 }
 
-#hackathon .icon-circle.gray {
-    border-color: #999;
-}
-
 .hackathon-teaser {
     background-color: #f5f5f5;
     text-align: center;
@@ -768,11 +764,19 @@
         width: 49.9%;
     }
 
-    #hackathon .icon-circle {
+    .hackathon-teaser .icon-circle {
         margin-bottom: 20px;
     }
 
     .modal-evento .title-row .title-div {
         margin-top: 20px;
+    }
+
+    .center-wrap {
+        flex-direction: column;
+    }
+
+    .center-wrap .center-inner p{
+        margin-left: 0;
     }
 }
