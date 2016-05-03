@@ -146,7 +146,7 @@
                     <p class="label-p" ng-class="getColor(curvento.classe)">Data</p>
                     <p><b>{{curvento.data}}</b>, {{curvento.hora}}</p>
                 </div>
-                <div class="col-xs-12 desc-div">
+                <div class="col-xs-12 desc-div"  ng-hide="curvento.descricao == '' ">
                     <p class="label-p" ng-class="getColor(curvento.classe)">Descrição</p>
                     <p>{{curvento.descricao}}</p>
                 </div>
@@ -455,7 +455,7 @@
                         <p class="label-p" ng-class="getColor(curvento.classe)">Data</p>
                         <p><b>{{curvento.data}}</b>, {{curvento.hora}}</p>
                     </div>
-                    <div class="col-xs-12 desc-div">
+                    <div class="col-xs-12 desc-div"  ng-hide="curvento.descricao == '' ">
                         <p class="label-p" ng-class="getColor(curvento.classe)">Descrição</p>
                         <p>{{curvento.descricao}}</p>
                     </div>
