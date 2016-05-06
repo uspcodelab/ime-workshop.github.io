@@ -43,7 +43,6 @@
   <![endif]-->
   <link rel="shortcut icon" href="images/ico/favicon.ico">
 </head>
-<!--/head-->
 
 <body id="home" class="homepage" ng-app="workSite">
 
@@ -62,31 +61,20 @@
             <img src="images/logo.png" alt="logo">
           </a>
         </div>
-
         <div class="collapse navbar-collapse navbar-right">
           <ul class="nav navbar-nav">
-            <li class="scroll active"><a href="#upcoming">Principal</a>
-            </li>
-            <li class="scroll"><a href="#about">Quem Somos</a>
-            </li>
-            <li class="scroll"><a href="#operation">Atividades</a>
-            </li>
-            <li class="scroll"><a href="#portfolio">Eventos Anteriores</a>
-            </li>
-            <li class="scroll"><a href="#hackathon">Hackathons</a>
-            </li>
-            <li class="scroll"><a href="#services">WorkLab</a>
-            </li>
-            <li class="scroll"><a href="#work-process">Parceiros</a>
-            </li>
+            <li class="scroll active"><a href="#upcoming">Principal</a></li>
+            <li class="scroll"><a href="#about">Quem Somos</a></li>
+            <li class="scroll"><a href="#operation">Atividades</a></li>
+            <li class="scroll"><a href="#portfolio">Eventos Anteriores</a></li>
+            <li class="scroll"><a href="#hackathon">Hackathons</a></li>
+            <li class="scroll"><a href="#services">WorkLab</a></li>
+            <li class="scroll"><a href="#work-process">Parceiros</a></li>
           </ul>
         </div>
       </div>
-      <!--/.container-->
     </nav>
-    <!--/nav-->
   </header>
-  <!--/header-->
 
   <section id="upcoming" ng-controller="proxCtrl">
     <div class="container">
@@ -102,23 +90,24 @@
           <flex-calendar options="options" events="events"></flex-calendar>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-5 ev-wrap wow fadeInRight">
-            <div class="event-list">
-              <div class="event-entry info-entry">
-                <div class="info-title" ng-show="showingNext">Vindo aí</div>
-                <div class="info-title" ng-hide="showingNext">{{curdate}}</div>
-                <div class="info-button" ng-hide="showingNext" ng-click="showNext()">
-                  <span class="fa fa-chevron-left"></span> Vindo aí
-                </div>
+          <div class="event-list">
+            <div class="event-entry info-entry">
+              <div class="info-title" ng-show="showingNext">Vindo aí</div>
+              <div class="info-title" ng-hide="showingNext">{{curdate}}</div>
+              <div class="info-button" ng-hide="showingNext" ng-click="showNext()">
+                <span class="fa fa-chevron-left"></span> Vindo aí
               </div>
-              <a ng-repeat="evento in listevents | orderBy:'+data'" data-toggle="modal" href="#modalEvento2" ng-click="makeModal(evento)">
-                  <div class="event-entry">
-                    <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>
-                    <h3>{{evento.nome}}</h3>
-                    <p>{{evento.data}}</p>
-                  </div>
-              </a>
-              <p class="no-events" ng-show="listevents.length == 0">Nenhum evento</p>
             </div>
+            <a ng-repeat="evento in listevents | orderBy:'+data'" data-toggle="modal" 
+               href="#modalEvento2" ng-click="makeModal(evento)">
+              <div class="event-entry">
+                <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>
+                <h3>{{evento.nome}}</h3>
+                <p>{{evento.data}}</p>
+              </div>
+            </a>
+            <p class="no-events" ng-show="listevents.length == 0">Nenhum evento</p>
+          </div>
         </div>
       </div>
     </div>
@@ -130,60 +119,62 @@
           </div>
           <div class="modal-body">
             <div class="row row-eq-height title-row">
-                <div class="col-xs-12 col-sm-5">
-                    <div class="thumb-wrapper" ng-style="{'background-image': 'url(images/eventos/thumbs/' + curvento.thumbnail + ')'}">
-                    </div>
-                    <div class="mini-icon-circle" ng-class="getBorderColor(curvento.classe)" ng-hide="curvento.classe == 'outros'">
-                        <img ng-src="images/partners/{{curvento.classe}}.png">
-                    </div>
+              <div class="col-xs-12 col-sm-5">
+                <div class="thumb-wrapper" ng-style="{'background-image':
+                  'url(images/eventos/thumbs/' + curvento.thumbnail + ')'}">
                 </div>
-                <div class="col-xs-12 col-sm-7 title-div">
-                    <h3 ng-class="getColor(curvento.classe)">{{curvento.nome}}</h3>
-                    <p>por <i>{{curvento.palestrante}}</i></p>
+                <div class="mini-icon-circle" ng-class="getBorderColor(curvento.classe)"
+                     ng-hide="curvento.classe == 'outros'">
+                  <img ng-src="images/partners/{{curvento.classe}}.png">
                 </div>
+              </div>
+              <div class="col-xs-12 col-sm-7 title-div">
+                <h3 ng-class="getColor(curvento.classe)">{{curvento.nome}}</h3>
+                <p>por <i>{{curvento.palestrante}}</i></p>
+              </div>
             </div>
             <div class="row info-row">
-                <div class="col-xs-6 col-sm-6">
-                    <p class="label-p" ng-class="getColor(curvento.classe)">Local</p>
-                    <p>{{curvento.local}}</p>
-                </div>
-                <div class="col-xs-6 col-sm-6">
-                    <p class="label-p" ng-class="getColor(curvento.classe)">Data</p>
-                    <p><b>{{curvento.data}}</b>, {{curvento.hora}}</p>
-                </div>
-                <div class="col-xs-12 desc-div"  ng-hide="curvento.descricao == '' ">
-                    <p class="label-p" ng-class="getColor(curvento.classe)">Descrição</p>
-                    <p>{{curvento.descricao}}</p>
-                </div>
+              <div class="col-xs-6 col-sm-6">
+                <p class="label-p" ng-class="getColor(curvento.classe)">Local</p>
+                <p>{{curvento.local}}</p>
+              </div>
+              <div class="col-xs-6 col-sm-6">
+                <p class="label-p" ng-class="getColor(curvento.classe)">Data</p>
+                <p><b>{{curvento.data}}</b>, {{curvento.hora}}</p>
+              </div>
+              <div class="col-xs-12 desc-div"  ng-hide="curvento.descricao == '' ">
+                <p class="label-p" ng-class="getColor(curvento.classe)">Descrição</p>
+                <p>{{curvento.descricao}}</p>
+              </div>
             </div>
             <div class="row feed-row" ng-show="isPast()">
-                <hr />
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <p class="label-p" ng-class="getColor(curvento.classe)">Feedback</p>
-                        <textarea rows=4 ng-model="feedback"
-                              class="form-control" placeholder="Foi ao evento? Deixe sua opinião!">
-                        </textarea>
-                    </div>
-                  <div ng-show="sAlert">
-                    <div class="alert-div">
-                        <span class="fa fa-warning"></span>
-                        &nbsp; &nbsp;Ei! Preencha alguma coisa!
-                    </div>
-                  </div>
-                  <div ng-show="sSuccess">
-                    <div class="alert-div success-div">
-                        <span class="fa fa-check-circle"></span>
-                        &nbsp; &nbsp;Enviado com sucesso!
-                    </div>
-                  </div>
-                  <div class="form-group btn-form-group">
-                    <button class="btn btn-primary mini-palestra-btn pull-right"
-                            role="button" ng-click="sendFeed()" ng-hide="sSuccess">
-                      Enviar
-                    </button>
+              <hr />
+              <div class="col-xs-12">
+                <div class="form-group">
+                  <p class="label-p" ng-class="getColor(curvento.classe)">Feedback</p>
+                  <textarea rows=4 ng-model="feedback" class="form-control"
+                            placeholder="Foi ao evento? Deixe sua opinião!">
+                  </textarea>
+                </div>
+                <div ng-show="sAlert">
+                  <div class="alert-div">
+                    <span class="fa fa-warning"></span>
+                    &nbsp; &nbsp;Ei! Preencha alguma coisa!
                   </div>
                 </div>
+                <div ng-show="sSuccess">
+                  <div class="alert-div success-div">
+                    <span class="fa fa-check-circle"></span>
+                    &nbsp; &nbsp;Enviado com sucesso!
+                  </div>
+                </div>
+                <div class="form-group btn-form-group">
+                  <button class="btn btn-primary mini-palestra-btn pull-right"
+                          role="button" ng-click="sendFeed()" ng-hide="sSuccess">
+                    Enviar
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -280,7 +271,6 @@
         </div>
         <div class="col-sm-9 col-xs-12 center-wrap">
           <div class="center-inner">
-
             <div class="media service-box wow fadeInRight">
               <div class="pull-left"><i class="fa fa-globe"></i>
               </div>
@@ -292,7 +282,6 @@
                 </p>
               </div>
             </div>
-
             <div class="media service-box wow fadeInRight">
               <div class="pull-left"><i class="fa fa-comment"></i>
               </div>
@@ -304,7 +293,6 @@
                 </p>
               </div>
             </div>
-
             <div class="media service-box wow fadeInRight">
               <div class="pull-left"><i class="fa fa-bolt"></i>
               </div>
@@ -316,7 +304,6 @@
                 </p>
               </div>
             </div>
-
             <div class="media service-box wow fadeInRight">
               <div class="pull-left"><i class="fa fa-users"></i>
               </div>
@@ -328,7 +315,6 @@
                 </p>
               </div>
             </div>
-
             <div class="media service-box wow fadeInRight">
               <div class="pull-left"><i class="fa fa-coffee"></i>
               </div>
@@ -341,13 +327,10 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
-    </div>
   </section>
-  <!--about-->
 
   <section id="operation">
     <div class="container">
@@ -392,7 +375,6 @@
       </div>
     </div>
   </section>
-  <!--operation-->
 
   <section id="portfolio" ng-controller="listaCtrl">
     <div class="container">
@@ -405,20 +387,21 @@
 
       <div class="text-center">
         <ul class="portfolio-filter">
-        <li><a class="active bold" href="#" data-filter="*">Todos os Eventos</a></li>
-        <li><a href="#" data-filter=".nubank" class="purple">Nubank</a></li>
-        <li><a href="#" data-filter=".hardware" class="teal">Hardware</a></li>
-        <li><a href="#" data-filter=".gamedev" class="orange">USPGameDev</a></li>
-        <li><a href="#" data-filter=".outros" class="gray">Outros</a></li>
-        </ul><!--/#portfolio-filter-->
+          <li><a class="active bold" href="#" data-filter="*">Todos os Eventos</a></li>
+          <li><a href="#" data-filter=".nubank" class="purple">Nubank</a></li>
+          <li><a href="#" data-filter=".hardware" class="teal">Hardware</a></li>
+          <li><a href="#" data-filter=".gamedev" class="orange">USPGameDev</a></li>
+          <li><a href="#" data-filter=".outros" class="gray">Outros</a></li>
+        </ul>
       </div>
       <div class="portfolio-items">
         <a href="#modalEvento" ng-repeat="event in events | orderBy: '-data'"
                                data-toggle="modal" ng-click="makeModal(event)">
           <div class="portfolio-item" ng-class="event.classe">
             <div class="portfolio-item-inner">
-                <div class="thumb-wrapper" ng-style="{'background-image': 'url(images/eventos/thumbs/' + event.thumbnail + ')'}">
-                </div>
+              <div class="thumb-wrapper" ng-style="{'background-image':
+                'url(images/eventos/thumbs/' + event.thumbnail + ')'}">
+              </div>
               <div class="portfolio-info">
                 <h3 ng-class="getColor(event.classe)">{{event.nome}}</h3>
                 {{event.palestrante}}
@@ -432,71 +415,74 @@
       </div>
       </div><!--/.container-->
       <div id="modalEvento" class="modal fade modal-evento">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="row row-eq-height title-row">
+                <div class="col-xs-12 col-sm-5">
+                  <div class="thumb-wrapper" ng-style="{'background-image':
+                    'url(images/eventos/thumbs/' + curvento.thumbnail + ')'}">
+                  </div>
+                  <div class="mini-icon-circle" ng-class="getBorderColor(curvento.classe)"
+                       ng-hide="curvento.classe == 'outros'">
+                    <img ng-src="images/partners/{{curvento.classe}}.png">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-7 title-div">
+                  <h3 ng-class="getColor(curvento.classe)">{{curvento.nome}}</h3>
+                  <p>por <i>{{curvento.palestrante}}</i></p>
+                </div>
               </div>
-              <div class="modal-body">
-                <div class="row row-eq-height title-row">
-                    <div class="col-xs-12 col-sm-5">
-                        <div class="thumb-wrapper" ng-style="{'background-image': 'url(images/eventos/thumbs/' + curvento.thumbnail + ')'}">
-                        </div>
-                        <div class="mini-icon-circle" ng-class="getBorderColor(curvento.classe)" ng-hide="curvento.classe == 'outros'">
-                            <img ng-src="images/partners/{{curvento.classe}}.png">
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-7 title-div">
-                        <h3 ng-class="getColor(curvento.classe)">{{curvento.nome}}</h3>
-                        <p>por <i>{{curvento.palestrante}}</i></p>
-                    </div>
+              <div class="row info-row">
+                <div class="col-xs-6 col-sm-6">
+                  <p class="label-p" ng-class="getColor(curvento.classe)">Local</p>
+                  <p>{{curvento.local}}</p>
                 </div>
-                <div class="row info-row">
-                    <div class="col-xs-6 col-sm-6">
-                        <p class="label-p" ng-class="getColor(curvento.classe)">Local</p>
-                        <p>{{curvento.local}}</p>
-                    </div>
-                    <div class="col-xs-6 col-sm-6">
-                        <p class="label-p" ng-class="getColor(curvento.classe)">Data</p>
-                        <p><b>{{curvento.data}}</b>, {{curvento.hora}}</p>
-                    </div>
-                    <div class="col-xs-12 desc-div"  ng-hide="curvento.descricao == '' ">
-                        <p class="label-p" ng-class="getColor(curvento.classe)">Descrição</p>
-                        <p>{{curvento.descricao}}</p>
-                    </div>
+                <div class="col-xs-6 col-sm-6">
+                  <p class="label-p" ng-class="getColor(curvento.classe)">Data</p>
+                  <p><b>{{curvento.data}}</b>, {{curvento.hora}}</p>
                 </div>
-                <div class="row feed-row" ng-show="isPast()">
-                    <hr />
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                            <p class="label-p" ng-class="getColor(curvento.classe)">Feedback</p>
-                            <textarea rows=4 ng-model="feedback"
-                                  class="form-control" placeholder="Foi ao evento? Deixe sua opinião!">
-                            </textarea>
-                        </div>
-                      <div ng-show="sAlert">
-                        <div class="alert-div">
-                            <span class="fa fa-warning"></span>
-                            &nbsp; &nbsp;Ei! Preencha alguma coisa!
-                        </div>
-                      </div>
-                      <div ng-show="sSuccess">
-                        <div class="alert-div success-div">
-                            <span class="fa fa-check-circle"></span>
-                            &nbsp; &nbsp;Enviado com sucesso!
-                        </div>
-                      </div>
-                      <div class="form-group btn-form-group">
-                        <button class="btn btn-primary mini-palestra-btn pull-right"
-                                role="button" ng-click="sendFeed()" ng-hide="sSuccess">
-                          Enviar
-                        </button>
-                      </div>
+                <div class="col-xs-12 desc-div"  ng-hide="curvento.descricao == '' ">
+                  <p class="label-p" ng-class="getColor(curvento.classe)">Descrição</p>
+                  <p>{{curvento.descricao}}</p>
+                </div>
+              </div>
+              <div class="row feed-row" ng-show="isPast()">
+                <hr />
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <p class="label-p" ng-class="getColor(curvento.classe)">Feedback</p>
+                    <textarea rows=4 ng-model="feedback" class="form-control"
+                              placeholder="Foi ao evento? Deixe sua opinião!">
+                    </textarea>
+                  </div>
+                  <div ng-show="sAlert">
+                    <div class="alert-div">
+                      <span class="fa fa-warning"></span>
+                      &nbsp; &nbsp;Ei! Preencha alguma coisa!
                     </div>
+                  </div>
+                  <div ng-show="sSuccess">
+                    <div class="alert-div success-div">
+                        <span class="fa fa-check-circle"></span>
+                        &nbsp; &nbsp;Enviado com sucesso!
+                    </div>
+                  </div>
+                  <div class="form-group btn-form-group">
+                    <button class="btn btn-primary mini-palestra-btn pull-right"
+                            role="button" ng-click="sendFeed()" ng-hide="sSuccess">
+                      Enviar
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
     </div>
   </section><!--/#EVENTOS-->
 
@@ -584,7 +570,6 @@
             <div class="media-body">
               <h4 class="media-heading">Programação</h4>
               <p>
-
                 <b>Web</b> e <b>mobile</b> são as tecnologias mais usadas para competir.
                 Faça algo criativo e bonito para impressionar os jurados!
               </p>
@@ -619,8 +604,6 @@
         </div>
       </div>
     </div>
-    </div>
-    </div>
   </section>
   <!--hackathon-->
 
@@ -646,8 +629,8 @@
 
       <div class="section-header">
         <h2 class="section-title text-center wow fadeInDown">
-      Vem aí: <span class="blue">WorkLab</span>
-      </h2>
+          Vem aí: <span class="blue">WorkLab</span>
+        </h2>
         <div class="icon-circle wow fadeInDown">
           <span class="icon2-worklab"></span>
         </div>
@@ -658,6 +641,7 @@
           e colocar a mão na massa!
         </p>
       </div>
+
       <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
           <p class="text-center technologies blue">
@@ -706,12 +690,10 @@
             (Você saberia dizer o nome de todas as tecnologias acima?)
           </p>
         </div>
-
       </div>
+
     </div>
-    <!--/.container-->
   </section>
-  <!--/#services-->
 
   <section id="work-process">
     <div class="container">
@@ -756,7 +738,6 @@
       </div>
     </div>
   </section>
-  <!--/#work-process-->
 
   <footer id="footer">
     <div id="footer_inside">
@@ -785,7 +766,6 @@
       </div>
     </div>
   </footer>
-  <!--/#footer-->
 
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
