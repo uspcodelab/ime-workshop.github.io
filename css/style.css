@@ -730,7 +730,7 @@
 .modal-evento .label-p {
     text-transform: uppercase;
     font-weight: 700;
-    margin-bottom: 0;
+    margin-bottom: 3px;
     line-height: 1;
     font-size: 17px;
 }
