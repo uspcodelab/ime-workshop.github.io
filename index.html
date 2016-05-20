@@ -101,7 +101,7 @@
                 <span class="fa fa-chevron-left"></span> Vindo aí
               </div>
             </div>
-            <a ng-repeat="evento in listevents | orderBy:'+data'" data-toggle="modal" 
+            <a ng-repeat="evento in listevents | orderBy:'-data'" data-toggle="modal" 
                href="#modalEvento2" ng-click="makeModal(evento)">
               <div class="event-entry">
                 <p class="icon fa" ng-class="[getColor(evento.classe), getIcon(evento.classe)]"></p>

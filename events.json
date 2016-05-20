@@ -68,5 +68,15 @@
         "local": "Sala B07",
         "descricao": "Depois da palestra dada pelo Lucas Hong sobre Blender, seguimos nesse tema com o workshop sobre LoqAirou, um modelador de superfícies tridimensionais similar ao Blender. Quem coordenará o workshop será Francisco Ortiz, arquiteto formado pela Mackenzie e aluno da pós-graduação na FAU.",
         "thumbnail": "loq_airou.png"
+    },
+    {
+        "nome": "Internet of Things - IoT",
+        "palestrante": "Bruno Aricó",
+        "classe": "hardware",
+        "data":"08/06/2016",
+        "hora": "13h às 14h",
+        "local": "A definir",
+        "descricao": "Em breve!",
+        "thumbnail": "iot.png"
     }
 ]
