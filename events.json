@@ -78,5 +78,15 @@
         "local": "A definir",
         "descricao": "Em breve!",
         "thumbnail": "iot.png"
+    },
+    {
+        "nome": "Workshop de Git",
+        "palestrante": "Renato Cordeiro",
+        "classe": "outros",
+        "data":"31/05/2016",
+        "hora": "14h30 às 17h30",
+        "local": "Sala BCC (258A)",
+        "descricao": "Nesse workshop, aprenderemos os principais comandos do Git e também um pouco sobre o funcionamento interno dele. Veremos como usar um servidor - o famoso GitHub - para compartilhar arquivos remotamente e trabalhar em grupos.",
+        "thumbnail": "git.jpg"
     }
 ]
