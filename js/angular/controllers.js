@@ -71,8 +71,18 @@ app.controller("proxCtrl", function($scope, fetchEventos, partnerService, formSe
     });
 
     fetchEventos.fetchFuturos().then(function(data) {
-        $scope.nextevents = data;
-        $scope.listevents = data;
+        //vamos adicionar o atributo dates aqui tambem,
+        //é usado na ordenação.
+        var events = [];
+        for (var x in data) {
+            var evento = data[x];
+            evento.date = moment(evento.data, "DD/MM/YYYY").add(1, "days").format("YYYY-MM-DD");
+            evento.eventClass = partnerService.getEventColor(evento.classe);
+            events.push(evento);
+        }
+        $scope.nextevents = events;
+        $scope.listevents = events;
+        console.log($scope.listevents);
     });
 
     //Opções do modal
