@@ -88,5 +88,15 @@
         "local": "Sala BCC (258A)",
         "descricao": "Nesse workshop, aprenderemos os principais comandos do Git e também um pouco sobre o funcionamento interno dele. Veremos como usar um servidor - o famoso GitHub - para compartilhar arquivos remotamente e trabalhar em grupos.",
         "thumbnail": "git.jpg"
+    },
+    {
+        "nome": "Palestra sobre Micro Serviços",
+        "palestrante": "Lucas Cavalcanti",
+        "classe": "nubank",
+        "data":"01/06/2016",
+        "hora": "13h às 14h",
+        "local": "Jacy Monteiro",
+        "descricao": "Nesta palestra, Lucas Cavalcanti (um dos primeiros desenvolvedores da Nubank) apresentará a arquitetura de micro serviços - modelo de desenvolvimento de sistemas que tem sido cada vez mais usado por conta de sua escalabilidade.",
+        "thumbnail": "micro.png"
     }
 ]
