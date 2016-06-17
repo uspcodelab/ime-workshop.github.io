@@ -98,5 +98,15 @@
         "local": "Jacy Monteiro",
         "descricao": "Nesta palestra, Lucas Cavalcanti (um dos primeiros desenvolvedores da Nubank) apresentará a arquitetura de micro serviços - modelo de desenvolvimento de sistemas que tem sido cada vez mais usado por conta de sua escalabilidade.",
         "thumbnail": "micro.png"
+    },
+    {
+        "nome": "Começando a carreira com o pé direito",
+        "palestrante": "Lucas Mendes, CEO (Contratado.me)",
+        "classe": "outros",
+        "data":"29/06/2016",
+        "hora": "13h às 14h",
+        "local": "A definir",
+        "descricao": "Dar os primeiros passos na carreira não é fácil, especialmente em tecnologia. Com mais de 3.5 mil ofertas de emprego na área de tecnologia feitas no seu marketplace, a Contratado preparou uma apresentação pra te contar das surpresas (boas e ruins) que te esperam no mundo lá fora.",
+        "thumbnail": "dev.png"
     }
 ]
