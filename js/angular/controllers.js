@@ -249,6 +249,7 @@ app.service("fetchEventos", function($http, $q) {
             for (var x in data.data) {
                 var evento = data.data[x];
                 if(moment(evento.data, "DD/MM/YYYY").isBefore(moment(), "day")) {
+                    evento.date = moment(evento.data, "DD/MM/YYYY").format("YYYY-MM-DD");
                     lista.push(evento);
                 }
             }
