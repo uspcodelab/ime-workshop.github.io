@@ -291,6 +291,8 @@ app.service("partnerService", function() {
                 return "teal";
             case "gamedev":
                 return "orange";
+            case "worklab":
+                return "blue";
             default:
                 return "gray";
         }
@@ -316,6 +318,8 @@ app.service("partnerService", function() {
                 return "fa-gears";
             case "gamedev":
                 return "fa-gamepad";
+            case "worklab":
+                return "fa-globe";
             default:
                 return "fa-lightbulb-o"; //classe falsa, não existe
         }

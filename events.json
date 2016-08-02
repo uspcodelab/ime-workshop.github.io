@@ -108,5 +108,25 @@
         "local": "A definir",
         "descricao": "Dar os primeiros passos na carreira não é fácil, especialmente em tecnologia. Com mais de 3.5 mil ofertas de emprego na área de tecnologia feitas no seu marketplace, a Contratado preparou uma apresentação pra te contar das surpresas (boas e ruins) que te esperam no mundo lá fora.",
         "thumbnail": "dev.png"
+    },
+    {
+        "nome": "HackathonUSP at Nubank",
+        "palestrante": "-",
+        "classe": "nubank",
+        "data":"27/08/2016",
+        "hora": "A definir",
+        "local": "Sede da Nubank",
+        "descricao": "O IME Workshop em parceria com o Nubank Brasil, uma das startups mais badaladas do momento, vem oferecer a primeira edição do HackathonUSP! 24h de desenvolvimento, criatividade e muita comida na sede da Nubank.",
+        "thumbnail": "hackathon.png"
+    },
+    {
+        "nome": "Oficina de Web - HTML/CSS",
+        "palestrante": "Gustavo Silva",
+        "classe": "worklab",
+        "data":"04/08/2016",
+        "hora": "16h às 18h",
+        "local": "Sala BCC",
+        "descricao": "Na primeira oficina do ciclo de Introdução a Web, vamos ver os conceitos de HTML5 e CSS3 que nos permitem estruturar o layout da nossa aplicação Web e estilizá-la como quisermos.",
+        "thumbnail": "web1.jpg"
     }
 ]
