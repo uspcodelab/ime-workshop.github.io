@@ -128,5 +128,15 @@
         "local": "Sala BCC",
         "descricao": "Na primeira oficina do ciclo de Introdução a Web, vamos ver os conceitos de HTML5 e CSS3 que nos permitem estruturar o layout da nossa aplicação Web e estilizá-la como quisermos.",
         "thumbnail": "web1.jpg"
+    },
+    {
+        "nome": "Oficina de Web - JS/jQuery",
+        "palestrante": "Gustavo Silva",
+        "classe": "worklab",
+        "data":"11/08/2016",
+        "hora": "16h às 18h",
+        "local": "Sala BCC",
+        "descricao": "Depois da oficina sobre páginas web simples com HTML e CSS, é hora de aprender como adicionar uma camada de interatividade a elas com o Javascript e sua biblioteca mais popular, o jQuery.",
+        "thumbnail": "web2.png"
     }
 ]
