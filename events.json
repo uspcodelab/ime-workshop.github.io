@@ -148,5 +148,25 @@
         "local": "Sala BCC",
         "descricao": "Depois de 2 semanas aprendendo todo o básico sobre desenvolvimento Web, chegamos enfim à última oficina do nosso ciclo! Vamos entender os formulários HTML e o seu uso para receber dados dos usuários.",
         "thumbnail": "web3.png"
+    },
+    {
+        "nome": "Git em Ambientes Ágeis",
+        "palestrante": "Alfredo Goldman",
+        "classe": "outros",
+        "data":"16/09/2016",
+        "hora": "12h",
+        "local": "Sala B-143",
+        "descricao": "Usar Git para trabalhar em grupo, porém, está longe de ser trivial: como lidar com vários programadores implementando features, corrigindo bugs e colocando o sistema em produção? Nessa palestra, vocês saberão a resposta para essa pergunta.",
+        "thumbnail": "git.jpg"
+    },
+    {
+        "nome": "Ciência de Dados na IBM Research",
+        "palestrante": "Ana Paula Appel",
+        "classe": "outros",
+        "data":"20/09/2016",
+        "hora": "13h",
+        "local": "Auditório Jacy Monteiro",
+        "descricao": "A Ciência de Dados lida com o problema de coletar quantidades massivas de dados, tratá-los, analisá-los e representá-los para extrair padrões interessantes. Venha assistir nossa palestra e conheça o trabalho pela perspectiva dos cientistas de dados da IBM Research - a divisão de pesquisas da IBM.",
+        "thumbnail": "ibm.jpg"
     }
 ]
