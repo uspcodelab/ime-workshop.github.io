@@ -168,5 +168,35 @@
         "local": "Auditório Jacy Monteiro",
         "descricao": "A Ciência de Dados lida com o problema de coletar quantidades massivas de dados, tratá-los, analisá-los e representá-los para extrair padrões interessantes. Venha assistir nossa palestra e conheça o trabalho pela perspectiva dos cientistas de dados da IBM Research - a divisão de pesquisas da IBM.",
         "thumbnail": "ibm.jpg"
+    },
+    {
+        "nome": "Oficina de Makefiles",
+        "palestrante": "Renato Cordeiro",
+        "classe": "outros",
+        "data":"27/09/2016",
+        "hora": "16h",
+        "local": "Sala A-258 (Sala BCC)",
+        "descricao": "Um makefile é um tipo de script executado pelo programa `make` com o objetivo de compilar, linkar, instalar, limpar e muito mais em termos de automatização de trabalho. Venha aprender sobre essa ferramenta muito útil para quem tem que enfrentar EPs cada vez maiores.",
+        "thumbnail": "make.jpg"
+    },
+    {
+        "nome": "Palestra de Docker",
+        "palestrante": "Daniel Miranda",
+        "classe": "outros",
+        "data":"07/10/2016",
+        "hora": "13h",
+        "local": "Sala B-143",
+        "descricao": "Docker é uma ferramenta que está se tornando cada vez mais popular no mundo Web, pois facilita o desenvolvimento, teste e distribuição de aplicações em vários ambientes, funcionando como uma \"máquina virtual light\". Venha aprender sobre ela nessa palestra em parceria com a matéria de LabXP.",
+        "thumbnail": "docker.png"
+    },
+    {
+        "nome": "Oficina de GDB",
+        "palestrante": "Victor Portella",
+        "classe": "outros",
+        "data":"18/10/2016",
+        "hora": "16h",
+        "local": "Sala B-07",
+        "descricao": "O GDB é uma ferramenta extremamente útil para realizar o \"debug\" e a análise de um programa. Nessa palestra, Victor Portella irá ensinar o básico do funcionamento desta ferramenta e alguns casos de uso.",
+        "thumbnail": "gdb.png"
     }
 ]
